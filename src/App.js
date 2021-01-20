@@ -1,12 +1,12 @@
+import React from 'react';
+import { NavBar } from './Widgets';
 
-
-
-function App() {
+const App =()=> {
   return (
     <div>
-     
+      <NavBar />
     </div>
-  );
+  )
 }
 
 export default App;
