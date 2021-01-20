@@ -1,7 +1,9 @@
 /* nav bar background */
 .navbar{
-    background: black;
+    background:#0d0d0d;
+     margin-left: 6.9rem;
 }
+
 
 /* font style */
 .nav-item{

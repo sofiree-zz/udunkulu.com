@@ -1,3 +1,3 @@
-// import NavBar from './NavBar'
- export * from './NavBar/NavBar';
 
+ export * from './NavBar/NavBar';
+export * from './SideBar/SideBar';

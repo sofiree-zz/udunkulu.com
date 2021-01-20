@@ -1,10 +1,12 @@
 import React from 'react';
-import { NavBar } from './Widgets';
+import { NavBar, Sidebar } from './Widgets';
 
 const App =()=> {
   return (
     <div>
-      <NavBar />
+      
+     <Sidebar/>
+     <NavBar />
     </div>
   )
 }

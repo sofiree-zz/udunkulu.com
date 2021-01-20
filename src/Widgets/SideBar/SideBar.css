@@ -1,0 +1,36 @@
+
+/* sidebar container */
+#sidebar-wrapper{
+    height: 100vmax;
+    width: 139px; 
+    position: fixed;
+    background: #0d0d0d;  
+}
+
+/* udunkulu logo */
+.sidebar-header{
+    padding:0.95rem;
+    margin-left: 0.5rem;
+}
+
+/* button list order */
+.list-group{
+    padding:0.8rem;
+}
+
+.list-group-item{
+    margin-top: 0.5rem;
+}
+
+.fas{
+    color: black;
+}
+
+/* animations */
+.btn:hover:hover,
+.btn:focus,
+.btn:active:focus{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover) ;
+    transform: translateX(0.35em);
+    background: #FFA700;
+}

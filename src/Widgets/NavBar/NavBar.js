@@ -3,11 +3,10 @@ import './NavBar.css';
 
 const NavBar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark  navbar-fixed-top" >
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-             <span class="navbar-toggler-icon"></span>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -23,6 +22,8 @@ const NavBar = () => {
                         <a class="nav-link" href="/">Top Artists</a>
                     </li>
                 </ul>
+
+               
                 {/* sign in button goes herre */}
             </div>
 
