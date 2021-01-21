@@ -3,8 +3,7 @@ import { NavBar, Sidebar, MusicController} from './Widgets';
 
 const App =()=> {
   return (
-    <div>
-      
+    <div>  
      <Sidebar/>
      <NavBar />
      <MusicController />
