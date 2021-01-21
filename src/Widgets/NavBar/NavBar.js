@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 
+
 const NavBar = () => {
     return (
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
@@ -22,9 +23,6 @@ const NavBar = () => {
                         <a class="nav-link" href="/">Top Artists</a>
                     </li>
                 </ul>
-
-               
-                {/* sign in button goes herre */}
             </div>
 
         </nav>
