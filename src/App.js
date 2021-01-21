@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Sidebar } from './Widgets';
+import { NavBar, Sidebar, MusicController} from './Widgets';
 
 const App =()=> {
   return (
@@ -7,6 +7,7 @@ const App =()=> {
       
      <Sidebar/>
      <NavBar />
+     <MusicController />
     </div>
   )
 }
