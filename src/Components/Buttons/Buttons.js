@@ -7,7 +7,7 @@ const Button = (props) => {
   const [variant] = useState(props.variant);
  
   return (
-    <button className={`btn-${variant} btn-${size}`} >{props.children}</button>
+    <button className={` btn-${variant}  btn-${size}`} id="button">{props.children}</button>
   );
 }
 export {Button};

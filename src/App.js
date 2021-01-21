@@ -1,15 +1,14 @@
 import React from 'react';
-// import { NavBar, Sidebar, MusicController} from './Widgets';
-import {Button} from './Components';
+import { NavBar, Sidebar, MusicController} from './Widgets';
 
 const App =()=> {
 
   return (
     <div>  
-<Button variant="warning" size={"sm"}>SignIn</Button>
-     {/* <Sidebar/>
+      
+       <Sidebar/>
      <NavBar />
-     <MusicController /> */}
+     {/* <MusicController />  */}
     </div>
   )
 }
