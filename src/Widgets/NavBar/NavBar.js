@@ -4,7 +4,7 @@ import {Button} from '../../Components';
 
 const NavBar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" >
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,7 +24,7 @@ const NavBar = () => {
                     </li>         
                 </ul>  
             </div>
-            <Button variant="warning" size={"sm"}>SIGN IN</Button>       
+            <Button variant="sign-in" size={"sm"}>Sign In</Button>       
         </nav>
     );
 }

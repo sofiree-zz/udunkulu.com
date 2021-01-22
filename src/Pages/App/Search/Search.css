@@ -1,0 +1,51 @@
+.modal-content{
+    height: 100vh;
+    width:calc(100% - 135.5px);
+    left: 135.5px;
+    position: relative;
+    z-index: 5;
+    background-color: #0d0d00;
+   }
+
+
+#nav-bar{
+    background: #0d0d00;
+}
+
+.input-group{
+    background-color:#0d0d00;
+  
+}
+
+.form-control{
+    background-color: #0d0d00;
+    border-radius: 50px 50px; 
+}
+
+
+
+#search{
+    border-radius: 50px 50px;
+    border-width: 2px;
+    border-color: white;
+}
+
+
+
+
+#container{
+    margin-top: 300px;
+}
+
+#container-text{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 10px;
+    opacity: 0.3;
+}
+
+
+#button-addon3{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}

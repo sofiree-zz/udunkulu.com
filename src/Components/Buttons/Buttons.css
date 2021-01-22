@@ -1,3 +1,11 @@
 #button{
     border-radius: 25px 25px 25px 25px;
+    height: 40px;
+}
+
+.btn-sign-in {
+    background-color: #FFA700 !important;
+    color: black;
+    width:108px !important;
+    height:40px !important;
 }
