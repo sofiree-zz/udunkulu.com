@@ -9,3 +9,35 @@
     width:108px !important;
     height:40px !important;
 }
+
+.btn-artist{
+    background-color: #C4C4C4 !important;
+    color: black;
+    width:148px !important;
+    height:72px !important;
+    margin: -2px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.btn-artist:hover,
+.btn-artist:active{
+    background-color: #FFA700 !important;
+    color: #C4C4C4;
+}
+
+.btn-listener{
+    background-color: #C4C4C4 !important;
+    color: black;
+    width:148px !important;
+    height:72px !important;
+    margin: -2px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.btn-listener:hover,
+.btn-listener:active{
+    background-color: #FFA700 !important;
+    color: #C4C4C4;
+}

@@ -8,7 +8,7 @@ import { UdunkuluVector } from '../../../Assets/Images';
 const Search=()=>{
     return(
         <div >
-           <div class="modal-content">
+           <div class="content">
               
                     <nav class="navbar m-0" id="nav-bar">
                         <form action=""
@@ -24,7 +24,7 @@ const Search=()=>{
                                
                             </div>
                         </form>  
-                        <Button variant="sign-in" size={"sm"}>Sign In</Button>
+                        <Button variant="sign-in" size={"sm"} data-target={"#authModal"} data-toggle="modal">Sign In</Button>
                     </nav>
 
                     <section >

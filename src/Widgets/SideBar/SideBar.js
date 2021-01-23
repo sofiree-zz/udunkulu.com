@@ -14,15 +14,7 @@ const Sidebar=()=>{
     if(showSearch) {
         searchBtn =  <Search/>
     }
-    // const [modalIsOpen,setIsOpen] = useState(false);
-    // function openModal() {
-    // setIsOpen(true);
 
-    // }
-    // let history = useHistory();
-    // const handleClick=()=>{
-    //     history.push("/Search");
-    // }
 
     return(
         <section>
