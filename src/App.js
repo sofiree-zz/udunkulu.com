@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import React from 'react';
-import { Authentication, Search } from './Pages';
+import { ArtistLogin, Authentication, Search } from './Pages';
 import { NavBar, Sidebar, MusicController} from './Widgets';
 
 const App =()=> {
@@ -10,6 +10,7 @@ const App =()=> {
       <Router>
       <Switch>
       <Route path="/Authentication" component={Authentication} exact />
+      {/* <Route path="/ArtistLogin" component={ArtistLogin} exact /> */}
       </Switch>
 
       <Sidebar/>

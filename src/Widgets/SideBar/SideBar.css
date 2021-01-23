@@ -38,7 +38,7 @@
 #button-border:focus,
 #button-border:active:focus{
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover) ;
-    transform: translateX(0.35em);
+   
     background-color: #FFA700;
 }
 

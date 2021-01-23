@@ -1,3 +1,4 @@
+/* buttons on search page and nav bar */
 #button{
     border-radius: 25px 25px 25px 25px;
     height: 40px;
@@ -10,6 +11,8 @@
     height:40px !important;
 }
 
+
+/* buttons on authentication page */
 .btn-artist{
     background-color: #C4C4C4 !important;
     color: black;
@@ -40,4 +43,26 @@
 .btn-listener:active{
     background-color: #FFA700 !important;
     color: #C4C4C4;
+}
+
+/* button on artist login page */
+
+.btn-Login{
+    width: 291px !important;
+    height: 52px !important;
+    background-color: #FFA700 !important;
+    color: white !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    border-radius: 15px !important;
+}
+
+.btn-Continue{
+    width: 291px !important;
+    height: 52px !important;
+    background-color: #FFA700 !important;
+    color: white !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    border-radius: 15px !important;
 }

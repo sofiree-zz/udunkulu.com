@@ -30,7 +30,9 @@
     border-color: white;
 }
 
-
+input{
+    background-color: #0d0d00 !important;
+}
 
 
 #container{
