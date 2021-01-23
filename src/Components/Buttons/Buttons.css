@@ -1,3 +1,4 @@
+/* buttons on search page and nav bar */
 #button{
     border-radius: 25px 25px 25px 25px;
     height: 40px;
@@ -8,4 +9,60 @@
     color: black;
     width:108px !important;
     height:40px !important;
+}
+
+
+/* buttons on authentication page */
+.btn-artist{
+    background-color: #C4C4C4 !important;
+    color: black;
+    width:148px !important;
+    height:72px !important;
+    margin: -2px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+.btn-artist:hover,
+.btn-artist:active{
+    background-color: #FFA700 !important;
+    color: #C4C4C4;
+}
+
+.btn-listener{
+    background-color: #C4C4C4 !important;
+    color: black;
+    width:148px !important;
+    height:72px !important;
+    margin: -2px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.btn-listener:hover,
+.btn-listener:active{
+    background-color: #FFA700 !important;
+    color: #C4C4C4;
+}
+
+/* button on artist login page */
+
+.btn-Login{
+    width: 291px !important;
+    height: 52px !important;
+    background-color: #FFA700 !important;
+    color: white !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    border-radius: 15px !important;
+}
+
+.btn-Continue{
+    width: 291px !important;
+    height: 52px !important;
+    background-color: #FFA700 !important;
+    color: white !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    border-radius: 15px !important;
 }

@@ -1,15 +1,25 @@
+import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import React from 'react';
-import { Search } from './Pages';
+import { ArtistLogin, Authentication, Search } from './Pages';
 import { NavBar, Sidebar, MusicController} from './Widgets';
 
 const App =()=> {
 
   return (
     <div>  
-       <Sidebar/>
-        
+      <Router>
+      <Switch>
+      <Route path="/Authentication" component={Authentication} exact />
+      {/* <Route path="/ArtistLogin" component={ArtistLogin} exact /> */}
+      </Switch>
 
-     <NavBar /> 
+      <Sidebar/>
+      <NavBar />
+      </Router>
+
+     
+
+      {/* <Authentication/>  */}
       {/* <MusicController />  */} 
     </div>
   )
