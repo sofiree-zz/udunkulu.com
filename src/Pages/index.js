@@ -1,3 +1,3 @@
 export * from './App/Search/Search';
 export * from './Authentication/Authentication';
-// export * from './Authentication/ArtistLogin';
+export * from './App/LandingPage/LandingPage';

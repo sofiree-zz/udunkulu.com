@@ -33,3 +33,12 @@
     font-size: 35px;
 }
 
+#navbarSupportedContent{
+    
+    justify-content: space-between !important;
+}
+
+
+#navbar-list{ 
+    margin-left: 5rem;
+}

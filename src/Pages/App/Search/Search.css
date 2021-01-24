@@ -30,8 +30,9 @@
     border-color: white;
 }
 
-input{
+#input{
     background-color: #0d0d00 !important;
+    border-radius: 50px 50px !important;
 }
 
 
