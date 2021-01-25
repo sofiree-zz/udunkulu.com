@@ -20,7 +20,7 @@ const Search=()=>{
                                 <div class="input-group-append border-0">
                                     <span class="btn"  id="button-addon3"><i class="fa fa-search"></i></span>
                                 </div>
-                                <input type="search" placeholder="Find song..."  class="form-control border-0" size="50"/>
+                                <input type="search" placeholder="Find song..."  class="form-control border-0" size="50" id="input"/>
                                
                             </div>
                         </form>  
