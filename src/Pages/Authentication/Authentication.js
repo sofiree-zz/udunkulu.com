@@ -12,11 +12,11 @@ const Authentication = () => {
                 <div class="modal-content" id="modalContent">
                     <div class="modal-body" id="modalBodyMain">
                             <img src={UdunkuluModalLogo} alt="" />
-                            <text class="modalText">How do you want to use <br/>this service?</text>              
-                        <div id="modalButton">
-                            <Button variant="artist" size={"lg"} data-target={"#artistLoginModal"} data-toggle="modal" data-dismiss="modal">Artist</Button>
-                            <Button variant="listener" size={"lg"} data-target={"#listenerLoginModal"} data-toggle="modal" data-dismiss="modal">Listener</Button>
-                        </div>
+                            <text id="modalText">How do you want to use <br/>this service?</text>              
+                            <div id="modalButton">
+                                <Button variant="artist" size={"lg"} data-target={"#artistLoginModal"} data-toggle="modal" data-dismiss="modal">Artist</Button>
+                                <Button variant="listener" size={"lg"} data-target={"#listenerLoginModal"} data-toggle="modal" data-dismiss="modal">Listener</Button>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -26,16 +26,16 @@ const Authentication = () => {
         <div class="modal fade" id="artistLoginModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog" id="userModalDialog">
                 <div class="modal-content" id="userModalContent">
-                    {/* <div class="modal-header"> */}
+                    <div id="close-button">
                         <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    {/* </div> */}
+                    </div>
                     {/* modal body */}
                     <div class="modal-body" id="userModalBodyMain">
                         <div id="modalLogo">
                             <img src={UdunkuluModalLogo} alt="" />
-                            <text class="modalText">You are signing in as an artist</text>
+                            <text id="userModalText">You are signing in as an artist</text>
                         </div>
                             
                         <form id="form">
@@ -57,10 +57,7 @@ const Authentication = () => {
                                     required
                                 />
                             </div>
-
-                            <div id="modalButton" class="row justify-content-center my-3 px-3">
-                                <Button variant="Login" size={"lg"} >SIGN IN</Button>                     
-                            </div>
+                                <Button variant="Login" size={"lg"} >SIGN IN</Button>                      
                         </form>
                          {/* forgot password field */}
                         <div id="forgotPassword">
@@ -82,21 +79,21 @@ const Authentication = () => {
         <div class="modal fade" id="artistSignUpModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog" id="SignUpModalDialog">
                 <div class="modal-content" id="SignUpModalContent">
-                    {/* <div class="modal-header"> */}
+                    <div id="signup-close-button">
                         <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    {/* </div> */}
+                    </div>
                     {/* modal body */}
                     <div class="modal-body" id="SignUpModalBody">
                         <div id="modalLogo">
                             <img src={UdunkuluModalLogo} alt="" />
-                            <text class="modalText">Signing Up as an Artist</text>
+                            <text id="modalText">Signing Up as an Artist</text>
                         </div>
                             
-                        <form id="form">
-                            <div class="row">
-                                <div class="form-group col" id="formGroup">
+                        <form id="signup-form">
+                            <div class="row"  id="signup-formGroup" >
+                                <div class="form-group col">
                                     <input class="form-control" 
                                         type="text" 
                                         placeholder="First Name" 
@@ -105,7 +102,7 @@ const Authentication = () => {
                                         required
                                     />
                                 </div>
-                                <div class="form-group col" id="formGroup">
+                                <div class="form-group col" >
                                     <input class="form-control" 
                                         type="text" 
                                         placeholder="Last Name" 
@@ -117,8 +114,8 @@ const Authentication = () => {
                             </div>
                             
 
-                            <div class="row">
-                                <div class="form-group col" id="formGroup">
+                            <div class="row"  id="signup-formGroup">
+                                <div class="form-group col" >
                                     <input class="form-control" 
                                         type="email" 
                                         placeholder="Email" 
@@ -127,7 +124,7 @@ const Authentication = () => {
                                         required
                                     />
                                 </div>
-                                <div class="form-group col" id="formGroup">
+                                <div class="form-group col" >
                                     <input class="form-control" 
                                         type="tel" 
                                         placeholder="Phone Number" 
@@ -140,8 +137,8 @@ const Authentication = () => {
                             </div>
                             
 
-                            <div class="row">
-                                <div class="form-group col" id="formGroup">
+                            <div class="row"  id="signup-formGroup">
+                                <div class="form-group col" >
                                     <input class="form-control" 
                                         type="password" 
                                         placeholder="Password" 
@@ -150,7 +147,7 @@ const Authentication = () => {
                                         required
                                     />
                                 </div>
-                                <div class="form-group col" id="formGroup">
+                                <div class="form-group col" >
                                     <input class="form-control" 
                                         type="password" 
                                         placeholder="Confirm Password" 
@@ -161,9 +158,7 @@ const Authentication = () => {
                                 </div>
                             </div>
 
-                            <div id="modalButton" class="row justify-content-center my-3 px-3">
-                                <Button variant="Login" size={"lg"} >SIGN UP</Button>                     
-                            </div>
+                                <Button variant="Signup" size={"lg"} >SIGN UP</Button>                        
                         </form>
 
                          {/* have an account field */}
@@ -189,16 +184,16 @@ const Authentication = () => {
         <div class="modal fade" id="listenerLoginModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog" id="userModalDialog">
                 <div class="modal-content" id="userModalContent">
-                    {/* <div class="modal-header"> */}
+                    <div id="close-button">
                         <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                    {/* </div> */}
+                    </div>
                     {/* modal body */}
                     <div class="modal-body" id="userModalBodyMain">
                         <div id="modalLogo">
                             <img src={UdunkuluModalLogo} alt="" />
-                            <text class="modalText">You are signing in as a listener</text>
+                            <text id="userModalText">You are signing in as a listener</text>
                         </div>
                             
                         <form id="form">
@@ -220,10 +215,7 @@ const Authentication = () => {
                                     required
                                 />
                             </div>
-
-                            <div id="modalButton" class="row justify-content-center my-3 px-3">
-                            <Button variant="Login" size={"lg"} >SIGN IN</Button>                     
-                            </div>
+                            <Button variant="Login" size={"lg"} >SIGN IN</Button>                                              
                         </form>
                          {/* forgot password field */}
                         <div id="forgotPassword">
@@ -255,7 +247,7 @@ const Authentication = () => {
                     <div class="modal-body" id="SignUpModalBody">
                         <div id="modalLogo">
                             <img src={UdunkuluModalLogo} alt="" />
-                            <text class="modalText">Signing Up as a Listener</text>
+                            <text id="modalText">Signing Up as a Listener</text>
                         </div>
                             
                         <form id="form">
