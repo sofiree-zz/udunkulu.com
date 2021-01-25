@@ -16,8 +16,8 @@ const Search=()=>{
                                 e.preventDefault();
                             }}
                         > 
-                            <div class="input-group mb-4 border rounded-pill my-3" id="search">
-                                <div class="input-group-append border-0">
+                            <div class="input-group mb-4  my-3" id="search">
+                                <div class=" border-0">
                                     <span class="btn"  id="button-addon3"><i class="fa fa-search"></i></span>
                                 </div>
                                 <input type="search" placeholder="Find song..."  class="form-control border-0" size="50" id="input"/>
@@ -27,13 +27,12 @@ const Search=()=>{
                         <Button variant="sign-in" size={"sm"} data-target={"#authModal"} data-toggle="modal">Sign In</Button>
                     </nav>
 
-                    <section >
-                        <div class="container d-flex flex-column" id="container">
+                    
+                        <div class="d-flex flex-column" id="container">
                             <img src={UdunkuluVector} alt="Udunkulu" />
-                            <text class="mx-auto" id="container-text">Contents will appear when you search them</text>
+                            <text class="mx-auto" id="text">Contents will appear when you search them</text>
                         </div>
-                    </section>
-               
+                   
                 </div>
             
         </div>

@@ -19,32 +19,39 @@
 
 .form-control{
     background-color: #0d0d00;
-    border-radius: 50px 50px; 
+    border-radius: 50px 50px;
 }
 
 
 
+
 #search{
-    border-radius: 50px 50px;
-    border-width: 2px;
-    border-color: white;
+    height: 50px;
+    border-radius: 100px;
+    border:1px solid #c4c4c4; 
+    opacity: 20%;
+   
 }
 
 #input{
     background-color: #0d0d00 !important;
     border-radius: 50px 50px !important;
+    color: #c4c4c4 !important;
 }
 
 
 #container{
-    margin-top: 300px;
+    margin-top: 250px;
+   
+    
 }
 
-#container-text{
+#text{
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
-    padding-top: 10px;
-    opacity: 0.3;
+    margin-top: 13px ;
+    color: #C4C4C4;
+    opacity: 20%;
 }
 
 
