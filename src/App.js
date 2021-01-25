@@ -7,8 +7,10 @@ const App =()=> {
 
   return (
     <div>  
+      <Sidebar/>
+            <NavBar/>
 
-      <LandingPage/>
+      {/* <LandingPage/> */}
       {/* <Router>
       <Switch>
       <Route path="/" component={} exact />
