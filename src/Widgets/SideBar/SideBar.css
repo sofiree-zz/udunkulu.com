@@ -9,7 +9,8 @@
 /* udunkulu logo */
 .sidebar-header{
     padding:2.5rem 0.95rem 0.95rem 0.95rem;
-    padding-left: 47px;
+    padding-left: 39px;
+    padding-top: 37px;
 }
 
 /* button list order */
@@ -27,7 +28,7 @@
 #button-border{
     border-radius: 9px;
     background-color: #FFA700;
-    padding: 11px;
+    padding: 7px;
 }
 #button-border i {
     font-size: 25px;
