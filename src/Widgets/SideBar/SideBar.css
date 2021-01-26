@@ -9,23 +9,28 @@
 /* udunkulu logo */
 .sidebar-header{
     padding:2.5rem 0.95rem 0.95rem 0.95rem;
-    margin-left: 0.7rem;
+    padding-left: 47px;
 }
 
 /* button list order */
-.list-group{
-    padding:0.8rem;
+.list-group-sidebar{
+    padding-left: 1.7rem;
+    margin-top: 3.9em;
 }
 
 .list-item{
     margin-top: 0.5rem;
     list-style: none;
-    padding-top: 1rem;
+    padding-top: 1.4rem;
 }
 
 #button-border{
-    border-radius: 15px;
-    background-color: #EFF0F1;
+    border-radius: 9px;
+    background-color: #FFA700;
+    padding: 11px;
+}
+#button-border i {
+    font-size: 25px;
 }
 
 .fas.fa-home,

@@ -1,10 +1,22 @@
 /* nav bar background */
 .navbar{
-    background:#0d0d0d;
-     margin-left: 6.9rem;
+    background:black;
+    margin-left: 2.9rem;
      z-index: 4;
     
 }
+@media only screen and (min-width: 1440px) {
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .navbar{
+        margin-left: 0;
+    }
+}
+
 
 /*  */
 
@@ -40,5 +52,5 @@
 
 
 #navbar-list{ 
-    margin-left: 5rem;
+    margin-left: 5.5rem;
 }
