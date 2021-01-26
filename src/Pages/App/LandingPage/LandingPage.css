@@ -3,7 +3,9 @@
     color: white;
 }
 
-.row{
+/* COMMENTED OUT row affecting
+TODO add class to lading page  */
+.landingPage-roww{
     margin: 0px 15px 0px 15px !important;
 }
 
