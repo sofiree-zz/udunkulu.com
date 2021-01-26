@@ -9,7 +9,7 @@ const App =()=> {
     <div>  
       {/* <Sidebar/> */}
             {/* <NavBar/> */}
-<NowPlaying/>
+{/* <NowPlaying/> */}
       {/* <LandingPage/> */}
       {/* <Router>
       <Switch>

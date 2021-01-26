@@ -34,9 +34,9 @@ const NowPlaying =()=>{
                         </li>
                     </ol>
                 </div> 
-                <MusicController/>   
+                   
             </section>
-
+            <MusicController/>
             <section id="playerImage">
                 <div id="playerImageText">
                     <h1 id="heading2">Fem</h1>
@@ -44,8 +44,9 @@ const NowPlaying =()=>{
                     <text><strong>Album:</strong>A Better Time</text>
                     <text><strong>Released:</strong>30 October, 2021</text>
 
-                    <div>
+                    <div id="playerImageButton">
                         <button id="followButton">Follow</button>
+                        <button id="playButton"><i class="fas fa-play"></i></button>
                     </div>
                 </div>
             </section>
