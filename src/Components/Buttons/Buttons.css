@@ -69,3 +69,14 @@
     height:40px !important; 
 }
 
+
+/* NOw playing page */
+
+.btn-signin-player {
+    background-color: #FFA700 !important;
+    color: black;
+    width:108px !important;
+    height:40px !important;
+    margin-top: 40px !important;
+}
+

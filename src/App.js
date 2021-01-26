@@ -1,15 +1,15 @@
 import {BrowserRouter as Router, Route, Switch, } from 'react-router-dom';
 import React from 'react';
-import { LandingPage } from './Pages';
+import { LandingPage, NowPlaying } from './Pages';
 import { NavBar, Sidebar} from './Widgets';
 
 const App =()=> {
 
   return (
     <div>  
-      <Sidebar/>
-            <NavBar/>
-
+      {/* <Sidebar/> */}
+            {/* <NavBar/> */}
+<NowPlaying/>
       {/* <LandingPage/> */}
       {/* <Router>
       <Switch>

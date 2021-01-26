@@ -1,4 +1,4 @@
-@media screen and (min-width: 900px){ 
+/* @media screen and (min-width: 900px){ 
     
     .btn{
         margin: 0px 0px 0px 0px;
@@ -12,18 +12,19 @@
         justify-content: space-around;
     }
     
- }
+ } */
  
 .container-fluid{
     height: 137px;
     position: fixed;
     margin-top: 450px;
-    margin-left: 6.7rem;
-    background-color: rgba(13, 13, 13, 0.1); 
+    background-color: rgba(13, 13, 13, 0.8); 
 }
 
 #player{
     height: 6px;
+    
+    margin: 0px 190px 0px 90px;
     border-radius: 31px;
 }
 
