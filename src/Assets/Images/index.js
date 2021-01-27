@@ -4,6 +4,7 @@ import MusicAvatar from './MusicAvatar.svg';
 import UdunkuluModalLogo from './UdunkuluModalLogo.svg';
 import UdunkuluVector from './UdunkuluVector.svg';
 import UdunkuluLady from './UdunkuluLady.svg';
+import AlbumImage from './AlbumImage.svg';
 // import Google from './Google.svg';
 // import Facebook from './Facebook.svg';
 
@@ -36,4 +37,8 @@ export{
 
 export{
     UdunkuluLady
+}
+
+export{
+    AlbumImage
 }
