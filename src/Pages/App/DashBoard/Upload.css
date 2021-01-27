@@ -1,0 +1,127 @@
+#albumFormGroup{
+    height: 86px;
+    border-radius: 10px;
+    border: 1px solid #828282
+}
+
+#moodFormGroup{
+    height: 86px; 
+    width: calc(100%/2);
+    margin-top: 22px;
+    border-radius: 10px;
+    border: 1px solid #828282
+}
+
+label{
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+}
+
+.form-control{
+    height: 56px;
+    border-radius: 10px;
+    border: 1px solid #828282;
+    box-sizing: border-box;
+    background-color: #0D0D0D !important;
+}
+
+::placeholder{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #4F4F4F;
+}
+
+#productionYear{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #4F4F4F;
+}
+
+#genreSelect{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+#moodSelect{
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    height: 56px;
+  
+    border-radius: 10px;
+    color: #4F4F4F;
+
+}
+
+#albumCard{
+    height: 281px;
+    width: 266px;
+    border-radius: 0px;
+    background: #0D0D0D;
+    border: 0.5px solid #56330D;
+}
+
+
+
+#albumCard p{
+    color: #FFA700;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+}
+
+#albumImage{
+    margin-top: -41px;
+}
+
+
+.DropBox{
+    height: 209px;
+    margin: 100px 106px 795px 78px;
+    border: 2px dashed #828282;
+    background-color: #1A1A1E;
+ 
+
+}
+
+.DropBox p{
+    color: white;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    margin-top: 58px;
+}
+
+/* this button is not responsive */
+#dropBoxButton{
+ padding: 31px 309px 57px 350px;
+}
