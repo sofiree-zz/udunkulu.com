@@ -1,16 +1,17 @@
-.header-text{
+.header-text-dashboard{
     font-family: Poppins;
     font-size: 40px;
     font-style: normal;
     font-weight: 500;
     text-align: left;
     margin-top: -4px;
-    /* color: white; */
+    color: white;
+    padding-left: 19px;
 }
 
-.card{
+.card-dashboard{
     height: 215px !important;
-    margin-top: 80px;
+    margin-top: 1.4em;
     border-radius: 15px;
     background: #0D0D0D;
     padding-top: 44px;
@@ -22,5 +23,9 @@
     font-weight: 500;
     text-align: center;
     
+}
+
+.innerPadding{
+    padding: 25px;
 }
 
