@@ -115,6 +115,18 @@ label{
  
 
 }
+@media only screen and (max-width: 600px) {
+    .DropBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 209px;
+        margin: 100px 106px 795px 78px;
+        border: 2px dashed #828282;
+        background-color: #1A1A1E;
+    }
+}
 
 .DropBox p{
     color: white;

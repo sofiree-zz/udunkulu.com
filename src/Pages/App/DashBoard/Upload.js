@@ -21,7 +21,7 @@ const Upload =()=>{
         <form>
             <div class="row p-1 d-flex justify-content-space-evenly">
                 <div class="col " id="col1">
-                    <div class="form-group" id="albumFormGroup">
+                    <div class="form-group form-group-upload" id="albumFormGroup">
                         <label for="albumName">Album Name</label>
                         <input type="text" class="form-control" id="albumName" aria-describedby="albumName" placeholder="Album Name"/> 
                     </div>

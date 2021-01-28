@@ -1,15 +1,23 @@
-#dropBox{
+#dropBox {
     margin: 53px 106px 0px 78px;
 }
 
-#uploadStatus{
+@media only screen and (max-width: 600px) {
+    #dropBox {
+        margin-top: 8em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#uploadStatus {
     height: 141px;
     margin-top: 72px;
     border-radius: 15px;
     background: #0D0D0D;
 }
 
-.TrackInfo{
+.TrackInfo {
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
@@ -22,13 +30,13 @@
     color: #EFF0F1;
 }
 
-.TrackStatus{
+.TrackStatus {
     justify-content: space-between;
     margin-left: 74px;
     padding-top: 9px;
 }
 
-.TrackStatus #size{
+.TrackStatus #size {
     font-family: Poppins;
     font-size: 12px;
     font-style: normal;
@@ -37,7 +45,8 @@
     text-align: left;
     color: white;
 }
-.TrackStatus text{
+
+.TrackStatus text {
     font-family: Poppins;
     font-size: 12px;
     font-style: normal;
@@ -47,11 +56,11 @@
     color: #FFA700;
 }
 
-.fas.fa-trash{
+.fas.fa-trash {
     margin-right: 76px;
 }
 
-.progress{
+.progress {
     height: 7px !important;
     margin-top: 30px !important;
     border-radius: 31px !important;
@@ -60,14 +69,14 @@
     margin-right: 76px !important;
 }
 
-.progress-bar-info{
+.progress-bar-info {
     height: 7px !important;
     width: 210px !important;
     border-radius: 31px !important;
     background-color: #FFA700 !important;
 }
 
-#buttonDiv{
+#buttonDiv {
     display: flex;
     justify-content: flex-end;
     margin-top: 100px;
