@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import '../DashBoard/Upload.css';
 import './UploadingPage.css';
+import {Button} from '../../../Components';
 
 const UploadingPage=(props)=>{
 
@@ -15,6 +16,7 @@ const UploadingPage=(props)=>{
                         multiple
                         id="upload-button"
                         hidden
+                        
                         /*onChange={handleChange}*/
                     />
                 <label htmlFor="upload-button" id="browse-file" /*onClick={handleUpload}*/>
@@ -42,6 +44,11 @@ const UploadingPage=(props)=>{
                 </div>
             </div>
             </section>
+
+            <div id="buttonDiv">
+                <Button variant="back" size={"sm"}>Back</Button>
+                <Button variant="next" size={"sm"}>Next</Button>
+            </div>
         </>
     );
 }

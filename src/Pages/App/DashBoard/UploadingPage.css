@@ -66,3 +66,10 @@
     border-radius: 31px !important;
     background-color: #FFA700 !important;
 }
+
+#buttonDiv{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    border-radius: 30px;
+}
