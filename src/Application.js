@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <App_layout>
-        <Upload/>
+        <TopArtist/>
       </App_layout>
     </>
   );
