@@ -18,22 +18,22 @@ const Upload =()=>{
 
   }
     return(
-        <form>
+        <form class="form-padding">
             <div class="row p-1 d-flex justify-content-space-evenly">
                 <div class="col " id="col1">
                     <div class="form-group form-group-upload" id="albumFormGroup">
-                        <label for="albumName">Album Name</label>
-                        <input type="text" class="form-control" id="albumName" aria-describedby="albumName" placeholder="Album Name"/> 
+                        <label for="albumName" class="label-upload">Album Name</label>
+                        <input type="text" class="form-control form-control-upload" id="albumName" aria-describedby="albumName" placeholder="Album Name"/> 
                     </div>
 
                     <div class="form-group" id="albumFormGroup">
-                        <label for="featuring">Featuring</label>
-                        <input type="text" class="form-control" id="featuring" aria-describedby="featuring" placeholder="Featuring"/> 
+                        <label for="featuring" className="label-upload">Featuring</label>
+                        <input type="text" class="form-control form-control-upload" id="featuring" aria-describedby="featuring" placeholder="Featuring"/> 
                     </div>
 
                     <div class="form-group" id="albumFormGroup">
-                        <label for="genreSelect">Genre</label>
-                        <select class="form-control" id="genreSelect">
+                        <label for="genreSelect" class="label-upload">Genre</label>
+                        <select class="form-control form-control-upload" id="genreSelect">
                         <option>Rock</option>
                         <option>Alte</option>
                         <option>Afro</option>
@@ -42,9 +42,9 @@ const Upload =()=>{
                         </select>
                     </div>
 
-                    <div class="form-group" id="albumFormGroup">
-                        <label for="productionYear">Production Year</label>
-                        <input type="date" class="form-control" id="productionYear" aria-describedby="productionYear" placeholder="12 Jan 2021"/> 
+                    <div class="form-group form-control-upload" id="albumFormGroup">
+                        <label for="productionYear" className="label-upload">Production Year</label>
+                        <input type="date" class="form-control form-control-upload" id="productionYear" aria-describedby="productionYear" placeholder="12 Jan 2021"/> 
                     </div>
                 </div>
             
@@ -59,8 +59,8 @@ const Upload =()=>{
                     </div>
 
                     <div class="form-group" id="moodFormGroup">
-                        <label for="moodSelect">Mood</label>
-                        <select class="form-control" id="moodSelect">
+                        <label for="moodSelect" className="label-upload">Mood</label>
+                        <select class="form-control form-control-upload" id="moodSelect">
                         <option>Happy</option>
                         <option>Night Cruise</option>
                         <option>Just Cruise</option>
@@ -81,7 +81,7 @@ const Upload =()=>{
                     hidden
                     onChange={handleChange}
                 />
-               <label htmlFor="upload-button" id="browse-file" onClick={handleUpload}>
+               <label htmlFor="upload-button" id="browse-file" onClick={handleUpload} className="label-upload">
                    Browse file
                </label>
                

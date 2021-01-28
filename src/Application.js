@@ -8,7 +8,7 @@ const App = () => {
   return (
     <>
       <App_layout>
-        <Finish/>
+        <Upload/>
       </App_layout>
     </>
   );

@@ -1,7 +1,12 @@
 #albumFormGroup{
     height: 86px;
     border-radius: 10px;
-    border: 1px solid #828282
+    /* border: 1px solid #828282 */
+}
+@media only screen and (max-width: 600px) {
+    .form-padding{
+        padding-top: 1em;
+    }
 }
 
 #moodFormGroup{
@@ -9,10 +14,10 @@
     width: calc(100%/2);
     margin-top: 22px;
     border-radius: 10px;
-    border: 1px solid #828282
+    /* border: 1px solid #828282 */
 }
 
-label{
+.label-upload{
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
@@ -23,10 +28,10 @@ label{
     color: white;
 }
 
-.form-control{
+.form-control-upload{
     height: 56px;
     border-radius: 10px;
-    border: 1px solid #828282;
+    border: 1px solid #202020;
     box-sizing: border-box;
     background-color: #0D0D0D !important;
 }
@@ -158,3 +163,4 @@ label{
     text-align: center !important;
     padding: 0.5rem;
 }
+
