@@ -7,8 +7,8 @@ const App =()=> {
 
   return (
     <div>  
-      <Sidebar/>
-            <NavBar/>
+      {/* <Sidebar/>
+            <NavBar/> */}
 
       {/* <LandingPage/> */}
       {/* <Router>
