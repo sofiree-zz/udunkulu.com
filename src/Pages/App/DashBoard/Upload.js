@@ -1,8 +1,22 @@
+import {useState} from 'react';
 import './Upload.css';
 import {AlbumImage} from '../../../Assets/Images';
 import {Button} from '../../../Components';
 
 const Upload =()=>{
+
+    const [album, setAlbum] = useState( );
+
+  const handleChange = e => {
+      console.log('file has uploaded', e.target.files);
+    // if (e.target.files.length) {
+    //   setAlbum(e.target.files[0]);
+    // }
+  };
+
+  const handleUpload = async e => {
+
+  }
     return(
         <form>
             <div class="row p-1 d-flex justify-content-space-evenly">
@@ -58,10 +72,19 @@ const Upload =()=>{
             </div>
             
             <div class="DropBox">
+                
                 <p>Click to add files from your device</p>
-                <div id="dropBoxButton">
-                <Button variant="browse-file" size={"sm"} >Browse file</Button>
-                </div>
+                <input
+                    type="file"
+                    multiple
+                    id="upload-button"
+                    hidden
+                    onChange={handleChange}
+                />
+               <label htmlFor="upload-button" id="browse-file" onClick={handleUpload}>
+                   Browse file
+               </label>
+               
                 
             </div>
         </form>
