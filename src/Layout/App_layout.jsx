@@ -10,6 +10,7 @@ export function App_layout(props) {
         <nav class="col-md-2 d-none d-md-block  sidebar ratio-sidebar">
           <div class="sidebar-sticky">
             <div class="nav flex-column">
+              {/* TODO if artist is present render artist sidebar */}
               <Sidebar />
             </div>
           </div>
