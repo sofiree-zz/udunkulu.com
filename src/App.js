@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { App_layout, ArtistLayout } from "./Layout";
 import { ArtistHomePage, Finish, LandingPage, Preview, Upload, UploadingPage } from "./Pages";
 import { Trending,Mood_Genre,RecentlyAdded,TopArtist } from "./Pages/App/Recommendation";
-import { NavBar, Sidebar } from "./Widgets";
+import { ArtistNavBar, NavBar, Sidebar, ProgressBar } from "./Widgets";
 
 
 const App = () => {
@@ -13,6 +13,8 @@ const App = () => {
         
         <Route exact path="/">
             <LandingPage/>
+            {/* <ArtistNavBar/> */}
+            {/* <ProgressBar/> */}
           </Route>
           <RouteWrapper path="/trending" component={Trending} layout={App_layout} />
           <RouteWrapper path="/select-mood" component={Mood_Genre} layout={App_layout} />

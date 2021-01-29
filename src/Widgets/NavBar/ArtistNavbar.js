@@ -1,4 +1,5 @@
 import "./NavBar.css";
+import '../../Pages/App/Search/Search.css';
 import { Button } from "../../Components";
 import { NavLink, Link } from "react-router-dom";
 import { Authentication } from "../../Pages";

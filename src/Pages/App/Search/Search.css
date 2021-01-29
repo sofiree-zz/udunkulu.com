@@ -64,3 +64,33 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
+
+/* artist */
+#search-bar{
+    width:calc(100% - 135.5px);
+    left: 135.5px;
+}
+
+#searchArtist{
+    height: 50px;
+    margin-top: 34px;
+    border-radius: 100px;
+    border:1px solid #0d0d0d; 
+    background-color: #1B1A1F !important;
+    opacity: 0.3;
+}
+
+#button-addon4{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.fa.fa-search{
+    color: #828282;
+  
+}
+#artistInput{
+    border-radius:50px 50px !important;
+    background-color: #1B1A1F !important;
+    
+}

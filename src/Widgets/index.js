@@ -4,3 +4,4 @@
  export * from './SideBar/SideBar';
  export * from './SideBar/ArtistSideBar';
  export * from './MusicController/MusicController';
+ export * from './NavBar/ProgressBar';
