@@ -3,7 +3,7 @@ import { Button } from "../../Components";
 import { NavLink, Link } from "react-router-dom";
 import { Authentication } from "../../Pages";
 
-const NavBar = () => {
+const ArtistNavBar = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -58,4 +58,4 @@ const NavBar = () => {
   );
 };
 
-export { NavBar };
+export { ArtistNavBar };

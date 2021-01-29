@@ -1,8 +1,8 @@
 import React from "react";
-import { NavBar, Sidebar } from "../Widgets";
+import { ArtistNavBar, ArtistSidebar } from "../Widgets";
 import "./App_layout.css";
 
-export function App_layout(props) {
+export function ArtistLayout(props) {
   const childElement  = props.children
   return (
     <div class="container-fluid">
@@ -11,7 +11,7 @@ export function App_layout(props) {
           <div class="sidebar-sticky">
             <div class="nav flex-column">
               {/* TODO if artist is present render artist sidebar */}
-              <Sidebar />
+              <ArtistSidebar />
             </div>
           </div>
         </nav>{" "}
@@ -21,7 +21,7 @@ export function App_layout(props) {
         >
           {/* <!-- DYNAMIC NAVBAR --> */}
 
-          <NavBar />
+          <ArtistNavBar/>
 
           {/* SPACER HERE */}
           <div id="spacer"></div>
