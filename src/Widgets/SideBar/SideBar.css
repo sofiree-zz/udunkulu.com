@@ -15,7 +15,7 @@
 
 /* button list order */
 .list-group-sidebar{
-    padding-left: 1.7rem;
+    padding-left: 0.8rem;
     margin-top: 3.9em;
 }
 
@@ -23,13 +23,15 @@
     margin-top: 0.5rem;
     list-style: none;
     padding-top: 1.4rem;
+
+    
 }
 
 #button-border{
-    border-radius: 9px;
-    background-color: #FFA700;
-    padding: 7px;
-}
+    border-radius: 15px;
+    background-color: #EFF0F1;
+    
+} 
 #button-border i {
     font-size: 25px;
 }
