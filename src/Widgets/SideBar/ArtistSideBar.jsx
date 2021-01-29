@@ -1,7 +1,7 @@
 // import {useHistory} from "react-router-dom";
 
 import {useState} from "react";
-import { UdunkuluLogo } from '../../Assets/Images';
+import { ProfilePhoto, UdunkuluLogo } from '../../Assets/Images';
 import { Home,LogOut,Upload } from '../../Assets/Icons';
 import './SideBar.css';
 import { NavLink } from "react-router-dom";
@@ -41,7 +41,7 @@ const ArtistSidebar=()=>{
                 </li>
                 <li class="list-item">
                     {/* TODO replace Udunku logo with dynamic artist img and avatar */}
-                    <img src={UdunkuluLogo} alt="" className=" btn logOutBtn"/>
+                    <img src={ProfilePhoto} alt="" className=" btn profilePhoto"/>
                     <a class="nav-link" href="#">
                     <img src={LogOut} alt="" className="btn logOutBtn" id="butto-border"/>
                         <span>Logout</span>

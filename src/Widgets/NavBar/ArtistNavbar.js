@@ -6,51 +6,32 @@ import { Authentication } from "../../Pages";
 const ArtistNavBar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <button
-          class="navbar-toggler ml-auto"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+      <nav class="navbar m-0" id="search-bar">
+        <form action=""
+            onSubmit={(e) => {
+                e.preventDefault();
+            }}
+            class="search-form"
+            id="searchForm"
+        > 
+            <div class="input-group mb-4  my-3" id="searchArtist">
+              <div class=" border-0">
+                <span class="btn"  id="button-addon4"><i class="fa fa-search"></i></span>
+              </div>
+              <input type="search" placeholder="Search"  class="form-control border-0" size="50" id="artistInput"/>
+                
+            </div>
+        </form>  
+    
+        <Button
+          variant="sign-in"
+          size={"sm"}
+          data-target={"#authModal"}
+          data-toggle="modal"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav" id="navbar-list">
-            <li class="nav-item">
-              <NavLink to="/trending" className="nav-link">
-                Trending
-              </NavLink>
-            </li>
-            <li class="nav-item">
-              <NavLink to="select-mood" className="nav-link">
-                Mood/Genre
-              </NavLink>
-            </li>
-            <li class="nav-item">
-            <NavLink to="recently-added" className="nav-link">
-            Recently Added
-              </NavLink>
-            </li>
-            <li className="nav-item">
-            <NavLink to="top-artist" className="nav-link">
-            Top Artists
-              </NavLink>
-            </li>
-          </ul>
-
-          <Button
-            variant="sign-in"
-            size={"sm"}
-            data-target={"#authModal"}
-            data-toggle="modal"
-          >
-            Sign In
-          </Button>
-        </div>
+          Sign In
+        </Button>
+    
       </nav>
 
       <Authentication />

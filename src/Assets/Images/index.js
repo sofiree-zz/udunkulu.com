@@ -6,8 +6,7 @@ import UdunkuluVector from './UdunkuluVector.svg';
 import UdunkuluLady from './UdunkuluLady.svg';
 import AlbumImage from './AlbumImage.svg';
 import UploadSuccess from './UploadSuccess.svg';
-// import Google from './Google.svg';
-// import Facebook from './Facebook.svg';
+import ProfilePhoto from './ProfilePhoto.svg';
 
 export {
     UdunkuluLogo
@@ -28,13 +27,6 @@ export{
     UdunkuluVector
 }
 
-// export{
-//     Google
-// }
-
-// export{
-//     Facebook
-// }
 
 export{
     UdunkuluLady
@@ -45,4 +37,8 @@ export{
 }
 export{
     UploadSuccess
+}
+
+export{
+    ProfilePhoto
 }
