@@ -1,6 +1,7 @@
 // import {useHistory} from "react-router-dom";
 
 import {useState} from "react";
+import { NavLink } from "react-router-dom";
 import { UdunkuluLogo } from '../../Assets/Images';
 import { Search } from "../../Pages";
 import './SideBar.css';
@@ -9,11 +10,11 @@ import './SideBar.css';
 
 const Sidebar=()=>{
 
-    const [showSearch, setShowSearch] = useState(false);
-    let searchBtn 
-    if(showSearch) {
-        searchBtn =  <Search/>
-    }
+    // const [showSearch, setShowSearch] = useState(false);
+    // let searchBtn 
+    // if(showSearch) {
+    //     searchBtn =  <Search/>
+    // }
 
 
     return(
@@ -28,14 +29,15 @@ const Sidebar=()=>{
                 </li>
 
                 <li class="list-item">
-                    <a class="nav-link" href="#">
-                    <button type="button" class="btn btn-dark" id="button-border" onClick={() => setShowSearch(!showSearch)}><i class="fas fa-search"></i></button>
-                    </a>
+                    {/* TODO clean up active state */}
+                    <NavLink to='/search' className="nav-link">
+                    <button type="button" class="btn btn-dark" id="button-border"><i class="fas fa-search"></i></button>
+                    </NavLink>
                 </li>
             </ul>
             
         </div>
-        {searchBtn}
+    
         </section>
     );
 }

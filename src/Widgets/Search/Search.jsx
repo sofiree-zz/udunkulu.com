@@ -1,12 +1,11 @@
-import "./NavBar.css";
-import { Button } from "../../Components";
-import { NavLink, Link } from "react-router-dom";
-import { Authentication } from "../../Pages";
+import React from 'react';
+import { Button } from '../../Components';
+import './Search.css'
 
-const ArtistNavBar = () => {
-  return (
-    <div>
-      <nav class="navbar m-0" id="search-bar">
+export   function Search() {
+    return (
+        <div>
+       <nav class="navbar m-0" id="search-bar">
         <form action=""
             onSubmit={(e) => {
                 e.preventDefault();
@@ -22,21 +21,8 @@ const ArtistNavBar = () => {
                 
             </div>
         </form>  
-    
-        <Button
-          variant="sign-in"
-          size={"sm"}
-          data-target={"#authModal"}
-          data-toggle="modal"
-        >
-          Sign In
-        </Button>
-    
+        <Button variant="sign-in" size={"sm"} data-target={"#authModal"} data-toggle="modal" style={{marginRight: '1.1em'}}>Sign In</Button>
       </nav>
-
-      <Authentication />
-    </div>
-  );
-};
-
-export { ArtistNavBar };
+        </div>
+    )
+}

@@ -7,9 +7,9 @@
     background-color: #0d0d00;
    }
 
-.search-form{
+/* .search-form{
     margin-left: 64px;
-}
+} */
 
 #nav-bar{
     background: #0d0d00;
@@ -45,12 +45,16 @@
 }
 
 
-#container{
-    margin-top: 250px;
-   
-    
+.search-container{
+    margin: auto;
+    margin-top: auto;
+width: 100%;
+display: grid;
+margin-top: 34px;
 }
-
+.search-container img{
+    margin: 5px auto;
+}
 #text{
     font-size: 15px;
     font-family: 'Poppins', sans-serif;
@@ -66,31 +70,48 @@
 }
 
 /* artist */
-#search-bar{
+/* #search-bar{
     width:calc(100% - 135.5px);
     left: 135.5px;
-}
+} */
 
 #searchArtist{
     height: 50px;
     margin-top: 34px;
     border-radius: 100px;
-    border:1px solid #0d0d0d; 
+    border:1px solid #fffdfd80;
     background-color: #1B1A1F !important;
     opacity: 0.3;
 }
+
+
+
+@media only screen and (min-width: 600px) {
+    #button{
+        margin-right: 81px;
+    }
+}   
 
 #button-addon4{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 
+#button-addon4 i{
+    font-size: 22px;
+margin-top: 5px;
+margin-right: -8px;
+}
 .fa.fa-search{
     color: #828282;
   
 }
 #artistInput{
-    border-radius:50px 50px !important;
+    /* border-radius:50px 50px !important; */
     background-color: #1B1A1F !important;
+    color: #ffffff;
     
+}
+#searchForm{
+    width: 54%
 }
