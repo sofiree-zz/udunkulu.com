@@ -56,11 +56,11 @@ const NavBar = () => {
 </>
 
 function renderConditionalNavBar() {
-  if (url !== 'search') {
-    return  navBar
+  if (url === 'search' || 'results') {
+    return  <Search/>
     //navBar
   }else{
-    return <Search/>
+    return  navBar
   }
 }
 let nav = renderConditionalNavBar()

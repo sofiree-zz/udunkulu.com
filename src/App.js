@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { App_layout, ArtistLayout } from "./Layout";
 import { ArtistHomePage, Finish, LandingPage, Preview, Search_page, Upload, UploadingPage } from "./Pages";
 import { Trending,Mood_Genre,RecentlyAdded,TopArtist } from "./Pages/App/Recommendation";
+import { SearchResult } from "./Pages/App/Search/SearchResult";
 import { ArtistNavBar, NavBar, Sidebar, ProgressBar } from "./Widgets";
 
 
@@ -22,7 +23,8 @@ const App = () => {
           <RouteWrapper path="/player" component={Trending} layout={App_layout} />
           <RouteWrapper path="/top-artist" component={TopArtist} layout={App_layout} />
           <RouteWrapper path="/search" component={Search_page} layout={App_layout} />
-          {/* <RouteWrapper path="/search-results-songs" component={Search_page} layout={App_layout} />
+          <RouteWrapper path="/results" component={SearchResult} layout={App_layout} />
+          {/* 
           <RouteWrapper path="/search-results-artist" component={Search_page} layout={App_layout} />
           <RouteWrapper path="/search-results-albums" component={Search_page} layout={App_layout} />
           <RouteWrapper path="/search-results-songs" component={Search_page} layout={App_layout} /> */}
