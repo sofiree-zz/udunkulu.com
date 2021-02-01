@@ -27,7 +27,7 @@ const Authentication = () => {
             <div class="modal-dialog" id="userModalDialog">
                 <div class="modal-content" id="userModalContent">
                     <div id="close-button">
-                        <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
+                        <button type="button" class="close" data-target={"#authModal"} data-toggle="modal" data-dismiss="modal" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -77,7 +77,7 @@ const Authentication = () => {
             <div class="modal-dialog" id="SignUpModalDialog">
                 <div class="modal-content" id="SignUpModalContent">
                     <div id="signup-close-button">
-                        <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
+                        <button type="button" class="close" data-target={"#authModal"} data-toogle="modal" data-dismiss="modal" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -94,7 +94,7 @@ const Authentication = () => {
                                     <div class="form-group" id="signup-formGroup">
                                         <input class="form-control form-control-signup" 
                                             type="text" 
-                                            placeholder="First Name" 
+                                            placeholder="Artist Name" 
                                             id="firstName" 
                                             name="firstName"
                                             required
@@ -127,7 +127,7 @@ const Authentication = () => {
                                     <div class="form-group " >
                                         <input class="form-control form-control-signup" 
                                             type="text" 
-                                            placeholder="Last Name" 
+                                            placeholder="Stage Name" 
                                             id="lastName" 
                                             name="lastName"
                                             required
@@ -182,7 +182,7 @@ const Authentication = () => {
             <div class="modal-dialog" id="userModalDialog">
                 <div class="modal-content" id="userModalContent">
                     <div id="close-button">
-                        <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
+                        <button type="button" class="close " data-target={"#authModal"} data-toogle="modal" data-dismiss="modal" aria-label="Close" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -234,7 +234,7 @@ const Authentication = () => {
             <div class="modal-dialog" id="SignUpModalDialog">
                 <div class="modal-content" id="SignUpModalContent">
                     <div id="signup-close-button">
-                        <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
+                        <button type="button" class="close " data-target={"#authModal"} data-toggle="modal" data-dismiss="modal" aria-label="Close" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -336,7 +336,7 @@ const Authentication = () => {
             <div class="modal-dialog" id="userModalDialog">
                 <div class="modal-content" id="userModalContent">
                     <div id="close-button">
-                        <button type="button" class="close "  data-dismiss="modal" aria-label="Close" id="close">
+                        <button type="button" class="close " data-target={"#authModal"} data-toggle="modal" data-dismiss="modal" aria-label="Close" id="close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
