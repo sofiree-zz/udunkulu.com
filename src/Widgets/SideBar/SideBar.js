@@ -3,7 +3,8 @@
 import {useState} from "react";
 import { NavLink } from "react-router-dom";
 import { UdunkuluLogo } from '../../Assets/Images';
-import { Search } from "../../Pages";
+import {Home} from '../../Assets/Icons';
+import { ArtistHomePage, Search } from "../../Pages";
 import './SideBar.css';
 
 
@@ -20,12 +21,15 @@ const Sidebar=()=>{
     return(
         <section>
          <div class="sidebar" id="sidebar-wrapper">
-            <img class="sidebar-header" src={UdunkuluLogo} alt="Udunkulu" href="/" />
+             <NavLink to='/trending' className='nav-link'>
+                <img class="sidebar-header" src={UdunkuluLogo} alt="Udunkulu"/>
+             </NavLink>
+            
             <ul class="list-group flex-column d-inline-block list-group-sidebar">
                 <li class="list-item">
-                    <a class="nav-link" href="#">
-                       <button type="button" class="btn btn-dark" id="button-border"><i class="fas fa-home"></i></button> 
-                    </a>
+                    <NavLink to='/trending' className="nav-link">
+                       <button type="button" class="btn btn-dark" id="button-border"><img src={Home} alt=""/></button> 
+                    </NavLink>
                 </li>
 
                 <li class="list-item">

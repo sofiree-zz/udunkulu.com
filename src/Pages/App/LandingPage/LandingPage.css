@@ -9,13 +9,10 @@ TODO add class to lading page  */
     margin: 0px 15px 0px 15px !important;
 }
 
-
-
 #landingPageContent{
     margin: 35px 0px 0px 120px;
     padding: 0px 0px 0px 0px;
 }
-
 
 .landingPageText{
     margin: 150px 0px 30px 0px;
@@ -23,18 +20,13 @@ TODO add class to lading page  */
 h1{
     font-size: 40px;
 }
-
 p{
     font-size: 15px;
 }
 
-
-
 #landingPageImage{
     width: 709px;
-    height: 709px;
-    
-    padding-right:  0px !important;
-    
+    height: 709px;   
+    padding-right:  0px !important;   
 }
 
