@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const LandingPage =()=>{
     return(
         <div class="landingPage">
-            <div class="row" id="landingPage">
+            <div class="row">
                 <div class="col" id="landingPageContent">
                     <img src={UdunkuluLogo1} alt="" id="UdunkuluLogo1"/>
                     <div class="landingPageText">
