@@ -47,12 +47,14 @@
 } 
 
 #close{
-    height: 10px;
-    width: 2px;
-    margin-right: 21px;
-    margin-top: -5.5px;
+    width: 0.5px;
+    align-self: center;
+    margin-right: 22.15px;
+    margin-top: -2.5px;
     color: white;
-   opacity: 100;
+   opacity: 1;
+   background: none;
+   border: none;
 }
 
 #userModalBodyMain{
