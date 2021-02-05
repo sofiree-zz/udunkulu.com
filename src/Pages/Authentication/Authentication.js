@@ -80,15 +80,32 @@ const Authentication = (props) => {
   const handleLogin = async (e, role) => {
     e.preventDefault();
     console.log("you are signed in");
-    try {
-      const response = await sendDetailsToServer(state.email, state.password);
-      alert("Logged in");
-      if (response.data.header) {
-        localStorage.setItem("state", JSON.stringify(response.data));
+    if (role === "artist"){
+      try {
+        const response = await sendDetailsToServer(state.email, state.password);
+        if (response.data.data.success) {
+          console.log(response.data.headers.token)
+          localStorage.setItem("token", JSON.stringify(response.data.headers.token));
+        }
+        alert("you are awesome")
+        // window.location = "/dashboard";
+        console.log("Login response:", response); 
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
+    } else if(role ==="listener"){
+      try {
+        const response = await sendDetailsToServer(state.email, state.password);
+        if (response.data.data.success) {
+          localStorage.setItem("state", JSON.stringify(response.data.headers.token));
+        }
+        window.location = "/top-artists";
+        console.log("Login response:", response); 
+      } catch (error) {
+        console.log(error);
+      }
     }
+    
   };
 
   return (
