@@ -22,16 +22,6 @@ const ArtistNavBar = () => {
                 
             </div>
         </form>  
-    
-        <Button
-          variant="sign-in"
-          size={"sm"}
-          data-target={"#authModal"}
-          data-toggle="modal"
-        >
-          Sign In
-        </Button>
-    
       </nav>
 
       <Authentication />

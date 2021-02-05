@@ -1,5 +1,6 @@
 import "./Authentication.css";
 import { useState } from "react";
+import {useHistory} from 'react-router-dom';
 import { UdunkuluModalLogo } from "../../Assets/Images";
 import { Button } from "../../Components";
 import {
@@ -7,7 +8,10 @@ import {
   sendDetailsToServer,
 } from "../../Api/Authentication";
 
+
+
 const Authentication = (props) => {
+  let history = useHistory();
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -15,6 +19,7 @@ const Authentication = (props) => {
     lastName: "",
     stageName: "",
     phoneNumber: "",
+    confirmPassword:""
   });
   // function for input fiels to listen for change
   const handleChange = (e) => {
@@ -24,27 +29,52 @@ const Authentication = (props) => {
       [id]: value,
     }));
   };
+
+
   // function for signing up
-  const handleSignUp = async (e, role) => {
+  const handleSubmit = async (e, role) => {
     e.preventDefault();
     console.log(state);
-    try {
-      if (state.password === state.confirmPassword) {
-        const response = await registerDetailsToServer(
-          state.email,
-          state.lastName,
-          state.password,
-          state.firstName,
-          state.stageName,
-          role
-        );
-        // i want to add an else statement for when the passwords don't match or timeout...
-        console.log("Signup response:", response);
-      } 
-    } catch (error) {
-      console.log(error);
-    }
+      if (state.password === state.confirmPassword && role ==="artist") {
+        try {
+          const response = await registerDetailsToServer(
+            state.email,
+            state.lastName,
+            state.password,
+            state.firstName,
+            state.stageName,
+            role
+          );
+            if (response.data.header) {
+              localStorage.setItem("state", JSON.stringify(response.data));
+            }
+            window.location = "/dashboard";
+            console.log("Signup response:", response); 
+        } catch (error) {
+                console.log(error);
+              }
+      } else if (role==="listener"){
+        try {
+          const response = await registerDetailsToServer(
+            state.email,
+            state.lastName,
+            state.password,
+            state.firstName,
+            state.stageName,
+            role
+          );
+          if (response.data.header) {
+            localStorage.setItem("state", JSON.stringify(response.data));
+          }
+          window.location = "/top-artist";
+          console.log("Signup response:", response); 
+      } catch (error) {
+              console.log(error);
+            }
+          }
   };
+  
+  
 
   // function for artist login
   const handleLogin = async (e, role) => {
@@ -228,7 +258,7 @@ const Authentication = (props) => {
                 <text id="modalText">Signing Up as an Artist</text>
               </div>
 
-              <form id="signup-form">
+              <form id="signup-form" onSubmit={(e)=>handleSubmit(e, "artist")}>
                 
                 <div class="row">
                   <div class="col-sm">
@@ -241,7 +271,7 @@ const Authentication = (props) => {
                         name="firstName"
                         value={state.firstName}
                         onChange={handleChange}
-                        required
+                      required
                       />
                     </div>
 
@@ -319,7 +349,7 @@ const Authentication = (props) => {
                   </div>
                   {/* row end */}
                 </div>
-                <Button variant="Signup" size={"lg"} onClick={(e) => handleSignUp(e,"artist")}>
+                <Button variant="Signup" size={"lg"} type="submit">
                   SIGN UP
                 </Button>
               </form>
@@ -469,7 +499,7 @@ const Authentication = (props) => {
                 <text id="modalText">Signing Up as an Artist</text>
               </div>
 
-              <form id="signup-form">
+              <form id="signup-form" onSubmit={(e)=>handleSubmit(e, "listener")}>
                 <input
                   name="role"
                   type="hidden"
@@ -540,7 +570,7 @@ const Authentication = (props) => {
                         placeholder="Phone Number"
                         id="phoneNumber"
                         name="phoneNumber"
-                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        pattern="[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{4}"
                         value={state.phoneNumber}
                         onChange={handleChange}
                         required
@@ -563,7 +593,7 @@ const Authentication = (props) => {
                   </div>
                   {/* row end */}
                 </div>
-                <Button variant="Signup" size={"lg"} onClick={(e) => handleSignUp(e, "listener")}>
+                <Button variant="Signup" size={"lg"}>
                   SIGN UP
                 </Button>
               </form>
@@ -573,7 +603,7 @@ const Authentication = (props) => {
                 <text>
                   Already have an account?{" "}
                   <a
-                    href="#"
+                  
                     id="sign-text"
                     data-target={"#listenerLoginModal"}
                     data-toggle="modal"
