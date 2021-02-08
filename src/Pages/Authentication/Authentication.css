@@ -14,14 +14,12 @@
     margin-bottom: 55px;
 }
 
-
-
 #modalText{
     color: black !important;
     font-family: poppins;
     font-size: 14px !important;
     font-weight: 500;
-    margin-top: 28px;
+    margin-top: 15px;
 }
 
 #modalButton{
@@ -119,31 +117,18 @@
 
 /* Artist Sign up */
 
-
-
-
 #SignUpModalContent{
     border-radius: 15px;
-
 }
 
 #signUpModalBody{
     text-align: center;
-    margin-top: 13px;
-}
-
-#modalText{
-    color: black !important;
-    font-family: poppins;
-    font-size: 14px !important;
-    font-weight: 500;
-    margin-top: 20px;
+    margin-top: 13px; 
 }
 
 
 #signup-form{
     margin-top: 40px;
-
 }
 
 
@@ -158,19 +143,16 @@
 }
 
 
-
 .form-control-signup{
     height: 52px;
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
-    line-height: 21px;
     text-align: left;
     background-color: #F1F0F0 !important;
     border-radius: 10px !important;
-
-} 
+}  
 
 #haveAccount{
     text-align: center;
@@ -183,7 +165,15 @@
     font-style: normal;
     font-weight: 500;
     line-height: 17px;
+    cursor: pointer;
 }
+
+/* media query */
+@media screen and (max-width: 400px){
+    #signup-form{
+        margin-top: 0px;
+    }
+ }
 
 
 

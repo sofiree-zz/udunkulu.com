@@ -80,14 +80,24 @@
 
 .btn-Signup{
     width: 291px !important;
+    max-width: 100% !important;
     height: 52px !important;
     background-color: #FFA700 !important;
     color: white !important;
     text-align: center !important;
     font-size: 14px !important;
     border-radius: 10px !important;
+    margin-left: auto;
     margin-left: 76.5px !important ;
 }
+
+@media screen and (max-width: 400px){
+   .btn-Signup{
+    margin-left: 0px !important ;
+   } 
+}
+
+
 
 /* button for landing page */
 

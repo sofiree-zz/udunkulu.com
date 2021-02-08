@@ -88,7 +88,7 @@ const Authentication = (props) => {
           localStorage.setItem("token", JSON.stringify(response.data.headers.token));
         }
         alert("you are awesome")
-        // window.location = "/dashboard";
+        window.location = "/dashboard";
         console.log("Login response:", response); 
       } catch (error) {
         console.log(error);
@@ -183,7 +183,7 @@ const Authentication = (props) => {
                 <text id="userModalText">You are signing in as an artist</text>
               </div>
 
-              <form id="form">
+              <form id="form" onSubmit={(e) => handleLogin(e,"artist")}>
                 <div class="form-group" id="formGroup">
                   <input
                     class="form-control form-control-login"
@@ -208,7 +208,7 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
-                <Button variant="Login" size={"lg"} onClick={(e) => handleLogin(e,"artist")}>
+                <Button variant="Login" size={"lg"} >
                   SIGN IN
                 </Button>
               </form>
@@ -269,7 +269,7 @@ const Authentication = (props) => {
               </button>
             </div>
             {/* modal body */}
-            <div class="modal-body" id="SignUpModalBody">
+            <div class="modal-body" id="SignUpModalBody" style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
               <div id="modalLogo">
                 <img src={UdunkuluModalLogo} alt="" />
                 <text id="modalText">Signing Up as an Artist</text>
@@ -423,7 +423,7 @@ const Authentication = (props) => {
                 <text id="userModalText">You are signing in as a listener</text>
               </div>
 
-              <form id="form">
+              <form id="form" onSubmit={(e) => handleLogin(e,"artist")}>
                 <div class="form-group" id="formGroup">
                   <input
                     class="form-control form-control-login"
@@ -448,7 +448,7 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
-                <Button variant="Login" size={"lg"}  onClick={(e) => handleLogin(e,"listener")}>
+                <Button variant="Login" size={"lg"} >
                   SIGN IN
                 </Button>
               </form>
@@ -510,10 +510,10 @@ const Authentication = (props) => {
               </button>
             </div>
             {/* modal body */}
-            <div class="modal-body" id="SignUpModalBody">
+            <div class="modal-body" id="SignUpModalBody" style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
               <div id="modalLogo">
                 <img src={UdunkuluModalLogo} alt="" />
-                <text id="modalText">Signing Up as an Artist</text>
+                <text id="modalText">Signing Up as a Listener</text>
               </div>
 
               <form id="signup-form" onSubmit={(e)=>handleSubmit(e, "listener")}>
