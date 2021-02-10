@@ -1,6 +1,5 @@
 import "./Authentication.css";
 import { useState } from "react";
-import {useHistory} from 'react-router-dom';
 import { UdunkuluModalLogo } from "../../Assets/Images";
 import { Button } from "../../Components";
 import {
@@ -11,7 +10,6 @@ import {
 
 
 const Authentication = (props) => {
-  let history = useHistory();
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -53,14 +51,17 @@ const Authentication = (props) => {
         } catch (error) {
                 console.log(error);
               }
-      } else if (role==="listener"){
+      } else{
+        alert("Check Password Field")
+      }
+       if (state.password === state.confirmPassword && role==="listener"){
         try {
           const response = await registerDetailsToServer(
             state.email,
             state.lastName,
             state.password,
             state.firstName,
-            state.stageName,
+            state.phoneNumber,
             role
           );
           if (response.data.header) {
@@ -71,7 +72,10 @@ const Authentication = (props) => {
       } catch (error) {
               console.log(error);
             }
-          }
+          }  else{
+            alert("Check Password Field")
+          };
+  
   };
   
   
@@ -83,9 +87,9 @@ const Authentication = (props) => {
     if (role === "artist"){
       try {
         const response = await sendDetailsToServer(state.email, state.password);
-        if (response.data.data.success) {
-          console.log(response.data.headers.token)
-          localStorage.setItem("token", JSON.stringify(response.data.headers.token));
+        if (response.data.header) {
+          console.log(response.data)
+          localStorage.setItem("token", JSON.stringify(response.data));
         }
         alert("you are awesome")
         window.location = "/dashboard";
@@ -96,8 +100,8 @@ const Authentication = (props) => {
     } else if(role ==="listener"){
       try {
         const response = await sendDetailsToServer(state.email, state.password);
-        if (response.data.data.success) {
-          localStorage.setItem("state", JSON.stringify(response.data.headers.token));
+        if (response.data.header) {
+          localStorage.setItem("state", JSON.stringify(response.data));
         }
         window.location = "/top-artists";
         console.log("Login response:", response); 

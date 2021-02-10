@@ -1,45 +1,31 @@
-.container{
-    background-color: #0d0d0d;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-}
 
-#playerWrap{
-    display: flex;
-    flex-direction: column;
-    width: 701px;
-    margin-left:43px;
-    
-}
-#header{
-    display: flex;
-    justify-content: space-between;
-}
+
 
 #songTracks{
     margin-top: 109px;
 }
 
+.playLibrary{
+    display: flex;
+    
+}
+
 #playerList{
-    line-height: 50px;
+    line-height: 50px;    
 }
 
 #listItems{
-    border-bottom: 0.5px solid rgba(239, 240, 241, 0.2);
-    
+    border-bottom: 0.5px solid rgba(239, 240, 241, 0.2);  
 }
 
 span{
     padding-right: 90px;
 }
 
-
 #playerImage{
-    height: 632px;
-    width: 419px;
+    margin-top: -5.2rem;
+    
     background-color: blueviolet; 
-    margin-left:43px;
 }
 
 #playerImageText{
@@ -56,11 +42,9 @@ span{
     font-size: 35px;
     font-style: normal;
     font-weight: 600;
-    line-height: 53px;
-    letter-spacing: 0em;
     text-align: left;
     color: white;
-    margin-top: 31px;
+    margin-top: -170px;
 }
 
 #heading2{

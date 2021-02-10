@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { App_layout, ArtistLayout } from "./Layout";
-import { ArtistHomePage, Finish, LandingPage, Preview, Search_page, Upload, UploadingPage } from "./Pages";
+import { ArtistHomePage, Finish, LandingPage, NowPlaying, Preview, Search_page, Upload, UploadingPage } from "./Pages";
 import { Trending,Mood_Genre,RecentlyAdded,TopArtist } from "./Pages/App/Recommendation";
 import { SearchResult } from "./Pages/App/Search/SearchResult";
 import { ArtistNavBar, NavBar, Sidebar, ProgressBar } from "./Widgets";
@@ -13,8 +13,9 @@ const App = () => {
         <Switch>
         
         <Route exact path="/">
+         
             <LandingPage/>
-            {/* <ArtistNavBar/> */}
+           
             {/* <ProgressBar/> */}
           </Route>
           <RouteWrapper path="/trending" component={Trending} layout={App_layout} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { NowPlaying } from "../Pages";
 import { NavBar, Sidebar } from "../Widgets";
 import "./App_layout.css";
 
@@ -28,6 +29,7 @@ export function App_layout(props) {
 
           {/* <!-- DYNAMIC CONTENT --> */}
           <div class="lowerContainer">
+           
             {childElement}
           </div>
           {/* sdsd */}
