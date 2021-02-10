@@ -30,16 +30,10 @@
 #button-border{
     border-radius: 15px;
     background-color: #EFF0F1;
-    
+    opacity: 0.3;
 } 
-#button-border i {
-    font-size: 25px;
-}
 
-.fas.fa-home,
-.fas.fa-search{
-   color:  #0D0D0D ;
-}
+
 
 /* animations */
 #button-border:hover,
@@ -50,19 +44,33 @@
     background-color: #FFA700;
 }
 
+#listItem{
+    margin-top: 4rem;
+}
 .logOutBtn{
-    padding: 7px;
+    margin: -5px 0px -5px 0px;
+    padding: 0px 10px 0px 10px;
 }
-.logOutBtn  span{
-    font-size: small;
-    background-color: red;
+
+#logout{
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    color:#EFF0F1;
+    opacity: 0.3;
+    padding: 0px 7px 0px 7px;
 }
+
 .avatar {
     vertical-align: middle;
     width: 50px;
     height: 50px;
     border-radius: 50%;
   }
+
+  
+
   .pad-top{
     margin-top: 4.5em;
   }

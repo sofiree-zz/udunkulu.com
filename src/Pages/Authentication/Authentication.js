@@ -17,8 +17,13 @@ const Authentication = (props) => {
     lastName: "",
     stageName: "",
     phoneNumber: "",
-    confirmPassword:""
+    confirmPassword:"",
+    passwordError: false,
   });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   // function for input fiels to listen for change
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -43,16 +48,22 @@ const Authentication = (props) => {
             state.stageName,
             role
           );
-            if (response.data.header) {
-              localStorage.setItem("state", JSON.stringify(response.data));
+            if (response.data.data) {
+              localStorage.setItem("state", JSON.stringify(response.data.token));
             }
-            window.location = "/dashboard";
+            // window.location = "/dashboard";
             console.log("Signup response:", response); 
         } catch (error) {
+              setError(error.response.data.message)
+              console.log("SIGNUP", error);
                 console.log(error);
               }
-      } else{
-        alert("Check Password Field")
+       } 
+       else{
+        setState((prevState) =>({
+          ...prevState,
+          passwordError: true
+        }));
       }
        if (state.password === state.confirmPassword && role==="listener"){
         try {
@@ -64,16 +75,21 @@ const Authentication = (props) => {
             state.phoneNumber,
             role
           );
-          if (response.data.header) {
-            localStorage.setItem("state", JSON.stringify(response.data));
+          if (response.data.data) {
+            localStorage.setItem("state", JSON.stringify(response.data.token));
           }
           window.location = "/top-artist";
           console.log("Signup response:", response); 
       } catch (error) {
-              console.log(error);
+        setError(error.response.data.message)
+        console.log("", error);
+          console.log(error);
             }
           }  else{
-            alert("Check Password Field")
+            setState((prevState) =>({
+              ...prevState,
+              passwordError: true
+            }));
           };
   
   };
@@ -87,25 +103,29 @@ const Authentication = (props) => {
     if (role === "artist"){
       try {
         const response = await sendDetailsToServer(state.email, state.password);
-        if (response.data.header) {
-          console.log(response.data)
-          localStorage.setItem("token", JSON.stringify(response.data));
+        if (response.data.data) {
+          console.log(response.data.data)
+          localStorage.setItem("state", JSON.stringify(response.data.token));
         }
         alert("you are awesome")
-        window.location = "/dashboard";
+        // window.location = "/dashboard";
         console.log("Login response:", response); 
       } catch (error) {
-        console.log(error);
+        setError(error.response.data.message)
+                console.log(error.response.data.message);
+                console.log(error);
       }
     } else if(role ==="listener"){
       try {
         const response = await sendDetailsToServer(state.email, state.password);
-        if (response.data.header) {
-          localStorage.setItem("state", JSON.stringify(response.data));
+        if (response.data.data) {
+          localStorage.setItem("state", JSON.stringify(response.data.token));
         }
         window.location = "/top-artists";
         console.log("Login response:", response); 
       } catch (error) {
+        setError(error.response.data.message)
+        console.log(error.response.data.message);
         console.log(error);
       }
     }
@@ -212,6 +232,7 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
+                {error && <p className="login__form--error">{error}</p>}
                 <Button variant="Login" size={"lg"} >
                   SIGN IN
                 </Button>
@@ -365,11 +386,14 @@ const Authentication = (props) => {
                         onChange={handleChange}
                         required
                       />
+                       
+                      {state.passwordError ? <p>Passwords do not match</p> : <p></p>}
                     </div>
                     {/* col2 ends */}
                   </div>
                   {/* row end */}
                 </div>
+                {error && <p className="login__form--error">{error}</p>}
                 <Button variant="Signup" size={"lg"} type="submit">
                   SIGN UP
                 </Button>
