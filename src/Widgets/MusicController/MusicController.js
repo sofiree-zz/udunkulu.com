@@ -5,7 +5,7 @@ import './MusicController.css';
 
 const MusicController = () => {
     return(
-        <div class="container-fluid">
+        <div class="container-fluid-music-controller">
             <div class="progress" id="player">
                 <div class="progress-bar"  role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"  id="player-bar"></div>
                 <div class="circle"></div>
