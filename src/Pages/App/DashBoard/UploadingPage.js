@@ -9,20 +9,7 @@ const UploadingPage=(props)=>{
 
     return(
         <>
-            <div class="DropBox" id="dropBox">   
-                    <p>Click to add files from your device</p>
-                    <input
-                        type="file"
-                        multiple
-                        id="upload-button"
-                        hidden
-                        
-                        /*onChange={handleChange}*/
-                    />
-                <label htmlFor="upload-button" id="browse-file" /*onClick={handleUpload}*/>
-                    Browse file
-                </label>    
-            </div>
+           {/* delected add more files section : its not needed for version 1 */}
 
             <section id="uploadStatus">
                 <div class="TrackInfo">Track Number + Track Name</div>
@@ -46,8 +33,8 @@ const UploadingPage=(props)=>{
             </section>
 
             <div id="buttonDiv">
-                <Button variant="back" size={"sm"}>Back</Button>
-                <Button variant="next" size={"sm"}>Next</Button>
+                <Button variant="back" size={"sm"} onClick={props.prev}>Back</Button>
+                <Button variant="next" size={"sm"} onClick={props.next}>Next</Button>
             </div>
         </>
     );

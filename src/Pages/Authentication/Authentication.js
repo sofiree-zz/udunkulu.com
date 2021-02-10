@@ -84,9 +84,10 @@ const Authentication = (props) => {
       try {
         const response = await sendDetailsToServer(state.email, state.password);
         if (response.data.data.success) {
-          console.log(response.data.headers.token)
-          localStorage.setItem("token", JSON.stringify(response.data.headers.token));
+          console.log(response.data.data.headers.token)
+          localStorage.setItem("token", JSON.stringify(response.data.data.token));
         }
+        localStorage.setItem("token", (response.data.data.token));
         alert("you are awesome")
         // window.location = "/dashboard";
         console.log("Login response:", response); 

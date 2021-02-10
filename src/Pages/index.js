@@ -9,3 +9,4 @@ export * from './App/DashBoard/Preview';
 export * from './App/DashBoard/Finish';
 export * from './App/Search/Search_page'
 export * from './App/Search/Search_page'
+export * from './App/DashBoard/UploadForm/Upload';

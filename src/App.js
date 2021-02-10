@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { App_layout, ArtistLayout } from "./Layout";
-import { ArtistHomePage, Finish, LandingPage, Preview, Search_page, Upload, UploadingPage } from "./Pages";
+import { ArtistHomePage, Finish, LandingPage, Preview, Search_page, Upload, UploadForm, UploadingPage } from "./Pages";
 import { Trending,Mood_Genre,RecentlyAdded,TopArtist } from "./Pages/App/Recommendation";
 import { SearchResult } from "./Pages/App/Search/SearchResult";
 import { ArtistNavBar, NavBar, Sidebar, ProgressBar } from "./Widgets";
@@ -34,6 +34,7 @@ const App = () => {
           <RouteWrapper path="/preview-song-upload" component={Preview} layout={ArtistLayout} />
           <RouteWrapper path="/upload-your-music" component={Upload} layout={ArtistLayout} />
           <RouteWrapper path="/upload" component={UploadingPage} layout={ArtistLayout} />
+          <RouteWrapper path="/multi" component={UploadForm} layout={ArtistLayout} />
         </Switch>
       </Router>
   </>;
