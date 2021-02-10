@@ -6,30 +6,17 @@ import {
   useHistory,
 } from "react-router-dom";
 import { App_layout, ArtistLayout } from "./Layout";
-import {
-  ArtistHomePage,
-  Finish,
-  LandingPage,
-  NowPlaying,
-  Preview,
-  Search_page,
-  Upload,
-  UploadingPage,
-  UploadForm
-} from "./Pages";
-import {
-  Trending,
-  Mood_Genre,
-  RecentlyAdded,
-  TopArtist,
-} from "./Pages/App/Recommendation";
+import { ArtistHomePage, Finish, LandingPage, Preview,  Upload, UploadingPage } from "./Pages";
+import { Trending,Mood_Genre,RecentlyAdded,TopArtist } from "./Pages/App/Recommendation";
 import { SearchResult } from "./Pages/App/Search/SearchResult";
+import Search_page from "./Pages/App/Search/Search_page";
 import { ArtistNavBar, NavBar, Sidebar, ProgressBar } from "./Widgets";
+import { Provider } from 'react-redux'; 
+import store from './store/app/store';
 
 const App = () => {
-  return (
-    <>
-      <Router>
+  return <Provider store={store}>
+    <Router>
         <Switch>
           <Route exact path="/">
             <LandingPage />
@@ -109,8 +96,7 @@ const App = () => {
             />
         </Switch>
       </Router>
-    </>
-  );
+  </Provider>;
 };
 
 function RouteWrapper({
