@@ -1,8 +1,8 @@
 #modalContent{
-    margin: 10rem auto auto auto;
+    margin: 8.5rem auto auto auto;
     width: 363px;
     background-color: white;
-    border-radius:25px !important ;
+    border-radius:15px !important ;
 }
 
 #modalBodyMain{
@@ -10,14 +10,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 2.5rem;
-}
-
-#modalBody{
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   
+    margin-top: 60px;
+    margin-bottom: 55px;
 }
 
 #modalText{
@@ -25,84 +19,163 @@
     font-family: poppins;
     font-size: 14px !important;
     font-weight: 500;
-    padding-top: 2rem;
+    margin-top: 15px;
 }
 
 #modalButton{
     height: 72px;
-    margin: 2rem 0rem 2rem 0rem;
+    margin: 31px 0px 0px 0px;
 }
 
-/* Artist Login */
+/* Artist/User Login */
 #userModalContent{
-    margin: 7rem auto auto auto;
+    margin: 5rem auto auto auto;
     width: 363px;
-    height: 522px;
     background-color: white;
-    border-radius:25px !important ;
+    border-radius:15px !important ;
+}
+
+#close-button{
+    background-color: #FFA700;
+    height: 24px;
+    width: 24px;
+    margin-left: 303px;
+    margin-top: 34px;
+    border-radius: 100px;
+} 
+
+#close{
+    width: 0.5px;
+    align-self: center;
+    margin-right: 22.15px;
+    margin-top: -2.5px;
+    color: white;
+   opacity: 1;
+   background: none;
+   border: none;
 }
 
 #userModalBodyMain{
     text-align: center;
+    margin-top: 13px;
 }
 
-#close{
-    background-color: #FFA700;
-    width: 29px;
-    align-items: center !important;
-    color:  white ;
-    border-radius: 50%;
-    margin: 1rem 0.9rem 0rem auto ;
-    opacity: 10 !important;
-}
+
 
 #modalLogo{
     display: flex;
     flex-direction: column;
-    line-height: normal;
     align-items: center;
     text-align: center;
 }
 
-text{
-    margin-top: -1rem;
+#userModalText{
+    color: black !important;
+    font-family: poppins;
+    font-size: 14px !important;
+    font-weight: 500;
+    margin-top: 20px;
 }
+
 
 #form{
-    padding-top: 1rem;
+    margin: 38px 18px 12px 18px;
+    height: 180px;
+    width: 291px;
 }
 
-input{
-    background-color:  #C4C4C4 !important;
-    border-radius: 15px !important;
+.form-control-login{
+    height: 52px;
+    background-color: #F1F0F0 !important;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 21px;
+    text-align: left;
+    border-radius: 10px !important;
 }
 
-#forgotPassword{
-    margin-top: -1rem;
+
+#forgotPassword text{
+    color: black;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
 }
+
 #sign-text{
     color: #FFA700 ;
 }
 
+
+
+
 /* Artist Sign up */
 
 #SignUpModalContent{
-    margin: 5rem auto auto auto;
-    width: 670px;
-    height: 656px;
-    background-color: white;
-    border-radius:25px !important ;
+    border-radius: 15px;
 }
 
-#SignUpModalBody{
+#signUpModalBody{
+    text-align: center;
+    margin-top: 13px; 
+}
+
+
+#signup-form{
+    margin-top: 40px;
+}
+
+
+#signup-close-button{
+    background-color: #FFA700;
+    height: 24px;
+    width: 24px;
+    margin-top: 34px;
+    margin-right: 33px;
+    border-radius: 100px;
+    align-self: flex-end;
+}
+
+
+.form-control-signup{
+    height: 52px;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    background-color: #F1F0F0 !important;
+    border-radius: 10px !important;
+}  
+
+#haveAccount{
     text-align: center;
 }
 
-#form{
-    margin-top: 2rem;
+#haveAccount text{
+    color: black;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    cursor: pointer;
 }
 
-#haveAccount{
-    margin-top: -1rem;
-}
+/* media query */
+@media screen and (max-width: 400px){
+    #signup-form{
+        margin-top: 0px;
+    }
+ }
+
+
+
+
 

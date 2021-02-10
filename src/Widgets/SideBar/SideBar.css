@@ -9,29 +9,31 @@
 /* udunkulu logo */
 .sidebar-header{
     padding:2.5rem 0.95rem 0.95rem 0.95rem;
-    margin-left: 0.7rem;
+    /* padding-left: 39px; */
+    padding-top: 20px;
 }
 
 /* button list order */
-.list-group{
-    padding:0.8rem;
+.list-group-sidebar{
+    padding-left: 0.8rem;
+    margin-top: 3.9em;
 }
 
 .list-item{
     margin-top: 0.5rem;
     list-style: none;
-    padding-top: 1rem;
+    padding-top: 1.4rem;
+
+    
 }
 
 #button-border{
     border-radius: 15px;
     background-color: #EFF0F1;
-}
+    opacity: 0.3;
+} 
 
-.fas.fa-home,
-.fas.fa-search{
-   color:  #0D0D0D ;
-}
+
 
 /* animations */
 #button-border:hover,
@@ -42,3 +44,33 @@
     background-color: #FFA700;
 }
 
+#listItem{
+    margin-top: 4rem;
+}
+.logOutBtn{
+    margin: -5px 0px -5px 0px;
+    padding: 0px 10px 0px 10px;
+}
+
+#logout{
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    color:#EFF0F1;
+    opacity: 0.3;
+    padding: 0px 7px 0px 7px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  
+
+  .pad-top{
+    margin-top: 4.5em;
+  }

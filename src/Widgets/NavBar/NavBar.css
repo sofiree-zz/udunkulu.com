@@ -1,10 +1,22 @@
 /* nav bar background */
 .navbar{
-    background:#0d0d0d;
-     margin-left: 6.9rem;
+    background:black;
+    margin-left: 2.9rem;
      z-index: 4;
     
 }
+@media only screen and (min-width: 1440px) {
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .navbar{
+        margin-left: 0;
+    }
+}
+
 
 /*  */
 
@@ -32,6 +44,15 @@
     outline:  white 7px; 
     font-size: 35px;
 }
+.nav-item .active{
+    font-size: 35px;
+    outline:  white 7px; 
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover) #e5e5e5;
+    transform: translateY(-0.35em);
+    text-shadow: -.25px -.25px 0 #e5e5e5, 
+                .25px .25px #e5e5e5;
+    outline:  white 7px; 
+}
 
 #navbarSupportedContent{
     
@@ -40,5 +61,5 @@
 
 
 #navbar-list{ 
-    margin-left: 5rem;
+    margin-left: 5.5rem;
 }

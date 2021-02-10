@@ -4,8 +4,9 @@ import MusicAvatar from './MusicAvatar.svg';
 import UdunkuluModalLogo from './UdunkuluModalLogo.svg';
 import UdunkuluVector from './UdunkuluVector.svg';
 import UdunkuluLady from './UdunkuluLady.svg';
-// import Google from './Google.svg';
-// import Facebook from './Facebook.svg';
+import AlbumImage from './AlbumImage.svg';
+import UploadSuccess from './UploadSuccess.svg';
+import ProfilePhoto from './ProfilePhoto.svg';
 
 export {
     UdunkuluLogo
@@ -26,14 +27,18 @@ export{
     UdunkuluVector
 }
 
-// export{
-//     Google
-// }
-
-// export{
-//     Facebook
-// }
 
 export{
     UdunkuluLady
+}
+
+export{
+    AlbumImage
+}
+export{
+    UploadSuccess
+}
+
+export{
+    ProfilePhoto
 }

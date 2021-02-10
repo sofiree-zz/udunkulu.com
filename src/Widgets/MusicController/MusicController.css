@@ -12,9 +12,9 @@
         justify-content: space-around;
     }
     
- } */
- 
-.container-fluid{
+ }
+ /* formally container-fluid : changed the to container-fluid-music-controller */
+.container-fluid-music-controller{
     height: 137px;
     position: fixed;
     margin-top: 450px;

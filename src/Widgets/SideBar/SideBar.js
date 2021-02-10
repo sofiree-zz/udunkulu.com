@@ -1,41 +1,48 @@
 // import {useHistory} from "react-router-dom";
 
 import {useState} from "react";
-import { UdunkuluLogo } from '../../Assets/Images';
-import { Search } from "../../Pages";
+import { NavLink } from "react-router-dom";
+import { UdunkuluLogo, ProfilePhoto } from '../../Assets/Images';
+import {Home, SearchIcon} from '../../Assets/Icons';
+import { ArtistHomePage, Search } from "../../Pages";
 import './SideBar.css';
+import { LogOutButton } from "../../Components/Buttons/LogOut";
 
 
 
 const Sidebar=()=>{
-
-    const [showSearch, setShowSearch] = useState(false);
-    let searchBtn 
-    if(showSearch) {
-        searchBtn =  <Search/>
-    }
-
-
     return(
         <section>
-        <div class="sidebar" id="sidebar-wrapper">
-            <img class="sidebar-header" src={UdunkuluLogo} alt="Udunkulu" href="/" />
-            <ul class="list-group flex-column d-inline-block">
+         <div class="sidebar" id="sidebar-wrapper">
+             <NavLink to='/trending' className='nav-link'>
+                <img class="sidebar-header" src={UdunkuluLogo} alt="Udunkulu"/>
+             </NavLink>
+            
+            <ul class="list-group flex-column d-inline-block list-group-sidebar">
                 <li class="list-item">
-                    <a class="nav-link" href="#">
-                       <button type="button" class="btn btn-dark" id="button-border"><i class="fas fa-home"></i></button> 
-                    </a>
+                    <NavLink to='/trending' className="nav-link">
+                       <button type="button" class="btn btn-dark" id="button-border"><img src={Home} alt=""/></button> 
+                    </NavLink>
                 </li>
 
                 <li class="list-item">
-                    <a class="nav-link" href="#">
-                    <button type="button" class="btn btn-dark" id="button-border" onClick={() => setShowSearch(!showSearch)}><i class="fas fa-search"></i></button>
-                    </a>
+                    {/* TODO clean up active state */}
+                    <NavLink to='/search' className="nav-link">
+                    <button type="button" class="btn btn-dark" id="button-border"><img src={SearchIcon} alt=""/></button>
+                    </NavLink>
                 </li>
             </ul>
-            
+
+            <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
+            <li class="list-item">
+                    {/* TODO replace Udunku logo with dynamic artist img and avatar */}
+                    <img src={ProfilePhoto} alt="" className=" btn profilePhoto"/>
+                    <LogOutButton/>
+                </li>
+            </ul>
+
         </div>
-        {searchBtn}
+    
         </section>
     );
 }

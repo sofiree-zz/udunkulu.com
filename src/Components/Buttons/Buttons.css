@@ -2,11 +2,14 @@
 #button{
     border-radius: 25px 25px 25px 25px;
     height: 40px;
+    /* margin-right: 81px; */
 }
+
 
 .btn-sign-in {
     background-color: #FFA700 !important;
     color: black;
+    font-family: Poppins !important;
     width:108px !important;
     height:40px !important; 
 }
@@ -18,11 +21,19 @@
 .btn-artist{
     background-color: #C4C4C4 !important;
     color: black;
+    font-family: Poppins !important;
+    font-size: 14px;
+    font-weight: 400;
     width:148px !important;
     height:72px !important;
     margin: -2px !important;
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
+
+    border-top-left-radius: 15px !important;
+    border-bottom-left-radius: 15px !important;
+    border: 1px solid #FFA700;
+  
 }
 
 .btn-artist:hover,
@@ -34,11 +45,18 @@
 .btn-listener{
     background-color: #C4C4C4 !important;
     color: black;
+    font-family: Poppins !important;
+    font-size: 14px;
+    font-weight: 400;
     width:148px !important;
     height:72px !important;
     margin: -2px !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
+
+    border-top-right-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border: 1px solid #FFA700;
 }
 
 .btn-listener:hover,
@@ -55,18 +73,59 @@
     background-color: #FFA700 !important;
     color: white !important;
     text-align: center !important;
+    font-family: Poppins !important;
     font-size: 14px !important;
-    border-radius: 15px !important;
+    border-radius: 10px !important;
 }
+
+.btn-Signup{
+    width: 291px !important;
+    max-width: 100% !important;
+    height: 52px !important;
+    background-color: #FFA700 !important;
+    color: white !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    border-radius: 10px !important;
+    margin-left: auto;
+    margin-left: 76.5px !important ;
+}
+
+@media screen and (max-width: 400px){
+   .btn-Signup{
+    margin-left: 0px !important ;
+   } 
+}
+
+
 
 /* button for landing page */
 
 .btn-Continue{
     background-color: #FFA700 !important;
     color: black;
+    font-family: Poppins !important;
     font-size: 15px !important;
+    font-style: medium !important;
+    font-weight: 500 !important;
     width:108px !important;
-    height:40px !important; 
+    height:45px !important; 
+}
+
+/* upload page button */
+.btn-back{
+    height: 56px;
+    width: 136px;
+    border: 1px solid #FFA700;
+    border-radius: 30px;
+    background-color: black;
+    color: #FFA700;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
 }
 
 
@@ -79,4 +138,28 @@
     height:40px !important;
     margin-top: 40px !important;
 }
+
+.btn-next{
+    height: 56px;
+    width: 136px;
+    border: 1px solid #FFA700;
+    border-radius: 30px;
+    background-color: black;
+    color: #FFA700;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+}
+
+.btn-back:hover,
+.btn-back:focus,
+.btn-next:hover,
+.btn-next:focus{
+    background-color:  #FFA700;
+    color: black;
+}
+
 
