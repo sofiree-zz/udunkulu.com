@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Authentication } from "../../Pages";
 import { Search } from "../Search/Search";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const url = window.location.pathname.substring(1);
   const navBar = (
     <>

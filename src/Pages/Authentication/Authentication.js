@@ -6,6 +6,8 @@ import {
   registerDetailsToServer,
   sendDetailsToServer,
 } from "../../Api/Authentication";
+import { LogOutButton } from "../../Components/Buttons/LogOut";
+import { Times } from "../../Assets/Icons";
 
 
 
@@ -23,6 +25,7 @@ const Authentication = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  
 
   // function for input fiels to listen for change
   const handleChange = (e) => {
@@ -40,6 +43,8 @@ const Authentication = (props) => {
     console.log(state);
       if (state.password === state.confirmPassword && role ==="artist") {
         try {
+          setIsLoading(true);
+         
           const response = await registerDetailsToServer(
             state.email,
             state.lastName,
@@ -49,24 +54,29 @@ const Authentication = (props) => {
             role
           );
             if (response.data.data) {
-              localStorage.setItem("state", JSON.stringify(response.data.token));
+              localStorage.setItem("token", JSON.stringify(response.data.token));
             }
-            // window.location = "/dashboard";
+            window.location = "/dashboard";
             console.log("Signup response:", response); 
+            
         } catch (error) {
               setError(error.response.data.message)
-              console.log("SIGNUP", error);
                 console.log(error);
-              }
+              } finally {
+                setIsLoading(false);
+               
+            }
        } 
        else{
         setState((prevState) =>({
           ...prevState,
-          passwordError: true
+          passwordError: true,
         }));
-      }
+        
+      } 
        if (state.password === state.confirmPassword && role==="listener"){
         try {
+          setIsLoading(true);
           const response = await registerDetailsToServer(
             state.email,
             state.lastName,
@@ -76,7 +86,7 @@ const Authentication = (props) => {
             role
           );
           if (response.data.data) {
-            localStorage.setItem("state", JSON.stringify(response.data.token));
+            localStorage.setItem("token", JSON.stringify(response.data.token));
           }
           window.location = "/top-artist";
           console.log("Signup response:", response); 
@@ -84,7 +94,9 @@ const Authentication = (props) => {
         setError(error.response.data.message)
         console.log("", error);
           console.log(error);
-            }
+            } finally {
+              setIsLoading(false);
+          }
           }  else{
             setState((prevState) =>({
               ...prevState,
@@ -102,24 +114,28 @@ const Authentication = (props) => {
     console.log("you are signed in");
     if (role === "artist"){
       try {
+        setIsLoading(true)
         const response = await sendDetailsToServer(state.email, state.password);
         if (response.data.data) {
           console.log(response.data.data)
-          localStorage.setItem("state", JSON.stringify(response.data.token));
+          localStorage.setItem("token", JSON.stringify(response.data.token));
         }
         alert("you are awesome")
-        // window.location = "/dashboard";
+        window.location = "/dashboard";
         console.log("Login response:", response); 
       } catch (error) {
         setError(error.response.data.message)
                 console.log(error.response.data.message);
                 console.log(error);
-      }
+      } finally {
+        setIsLoading(false);
+    }
     } else if(role ==="listener"){
       try {
+        setIsLoading(true)
         const response = await sendDetailsToServer(state.email, state.password);
         if (response.data.data) {
-          localStorage.setItem("state", JSON.stringify(response.data.token));
+          localStorage.setItem("token", JSON.stringify(response.data.token));
         }
         window.location = "/top-artists";
         console.log("Login response:", response); 
@@ -127,6 +143,8 @@ const Authentication = (props) => {
         setError(error.response.data.message)
         console.log(error.response.data.message);
         console.log(error);
+      } finally{
+        setIsLoading(false)
       }
     }
     
@@ -197,7 +215,7 @@ const Authentication = (props) => {
                 data-dismiss="modal"
                 id="close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true"><img src={Times} alt=""/> </span>
               </button>
             </div>
             {/* modal body */}
@@ -232,9 +250,9 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
-                {error && <p className="login__form--error">{error}</p>}
+                {error && <p className="loginFormError">{error}</p>}
                 <Button variant="Login" size={"lg"} >
-                  SIGN IN
+                {isLoading ? "Please wait..." : "SIGN IN"}
                 </Button>
               </form>
               {/* forgot password field */}
@@ -290,17 +308,18 @@ const Authentication = (props) => {
                 data-dismiss="modal"
                 id="close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true"><img src={Times} alt=""/></span>
               </button>
             </div>
-            {/* modal body */}
-            <div class="modal-body" id="SignUpModalBody" style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
-              <div id="modalLogo">
-                <img src={UdunkuluModalLogo} alt="" />
-                <text id="modalText">Signing Up as an Artist</text>
-              </div>
+            <div id="mainModal" >
+              {/* modal body */}
+              <div class="modal-body" id="SignUpModalBody" style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
+                <div id="modalLogo">
+                  <img src={UdunkuluModalLogo} alt="" />
+                  <text id="modalText">Signing Up as an Artist</text>
+                </div>
 
-              <form id="signup-form" onSubmit={(e)=>handleSubmit(e, "artist")}>
+                <form id="signup-form" onSubmit={(e)=>handleSubmit(e, "artist")}>
                 
                 <div class="row">
                   <div class="col-sm">
@@ -343,6 +362,7 @@ const Authentication = (props) => {
                         required 
                         title="6 characters minimum"
                       />
+                        {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col1 ends */}
                   </div>
@@ -387,34 +407,36 @@ const Authentication = (props) => {
                         required
                       />
                        
-                      {state.passwordError ? <p>Passwords do not match</p> : <p></p>}
+                      {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col2 ends */}
                   </div>
                   {/* row end */}
                 </div>
-                {error && <p className="login__form--error">{error}</p>}
+                {error && <p className="signUpFormError">{error}</p>}
                 <Button variant="Signup" size={"lg"} type="submit">
-                  SIGN UP
+                     {isLoading ? "Please wait..." : "SIGN UP"}
                 </Button>
-              </form>
+                </form>
             
-              {/* have an account field */}
-              <div id="haveAccount">
-                <text>
-                  Already have an account?{" "}
-                  <a
-                    id="sign-text"
-                    data-target={"#artistLoginModal"}
-                    data-toggle="modal"
-                    data-dismiss="modal"
-                  >
-                    Sign in here
-                  </a>
-                </text>
+                {/* have an account field */}
+                <div id="haveAccount">
+                  <text>
+                    Already have an account?{" "}
+                    <a
+                      id="sign-text"
+                      data-target={"#artistLoginModal"}
+                      data-toggle="modal"
+                      data-dismiss="modal"
+                    >
+                      Sign in here
+                    </a>
+                  </text>
+                </div>
               </div>
             </div>
           </div>
+          
         </div>
       </div>
 
@@ -441,7 +463,7 @@ const Authentication = (props) => {
                 aria-label="Close"
                 id="close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true"><img src={Times} alt=""/></span>
               </button>
             </div>
             {/* modal body */}
@@ -476,8 +498,9 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
+                {error && <p className="loginFormError">{error}</p>}
                 <Button variant="Login" size={"lg"} >
-                  SIGN IN
+                {isLoading ? "Please wait..." : "SIGN IN"}
                 </Button>
               </form>
               {/* forgot password field */}
@@ -523,8 +546,8 @@ const Authentication = (props) => {
         aria-hidden="true"
       >
         <div class="modal-dialog" id="SignUpModalDialog">
-          <div class="modal-content" id="SignUpModalContent">
-            <div id="signup-close-button">
+          <div class="modal-content"  id="SignUpModalContent">
+          <div id="signup-close-button">
               <button
                 type="button"
                 class="close "
@@ -534,9 +557,13 @@ const Authentication = (props) => {
                 aria-label="Close"
                 id="close"
               >
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true"><img src={Times} alt=""/></span>
               </button>
             </div>
+            <div id="mainModal" >
+
+            
+            
             {/* modal body */}
             <div class="modal-body" id="SignUpModalBody" style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
               <div id="modalLogo">
@@ -590,6 +617,8 @@ const Authentication = (props) => {
                         onChange={handleChange}
                         required
                       />
+
+                      {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col1 ends */}
                   </div>
@@ -633,13 +662,15 @@ const Authentication = (props) => {
                         onChange={handleChange}
                         required
                       />
+                        {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col2 ends */}
                   </div>
                   {/* row end */}
                 </div>
+                {error && <p className="signUpFormError">{error}</p>}
                 <Button variant="Signup" size={"lg"}>
-                  SIGN UP
+                {isLoading ? "Please wait..." : "SIGN UP"}
                 </Button>
               </form>
 
@@ -658,6 +689,7 @@ const Authentication = (props) => {
                   </a>
                 </text>
               </div>
+            </div>
             </div>
           </div>
         </div>

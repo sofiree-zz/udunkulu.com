@@ -10,7 +10,8 @@ import { LogOutButton } from "../../Components/Buttons/LogOut";
 
 
 
-const Sidebar=()=>{
+const Sidebar=(props)=>{
+   
     return(
         <section>
          <div class="sidebar" id="sidebar-wrapper">
@@ -32,14 +33,17 @@ const Sidebar=()=>{
                     </NavLink>
                 </li>
             </ul>
-
-            <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
+            
+           
+                <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
             <li class="list-item">
                     {/* TODO replace Udunku logo with dynamic artist img and avatar */}
-                    <img src={ProfilePhoto} alt="" className=" btn profilePhoto"/>
+                    
                     <LogOutButton/>
                 </li>
             </ul>
+            
+            
 
         </div>
     
