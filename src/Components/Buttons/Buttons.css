@@ -19,22 +19,23 @@
 
 /* buttons on authentication page */
 .btn-artist{
-    background-color: #C4C4C4 !important;
+    background-color: rgba(196, 196, 196, 0.3) !important;
     color: black;
     font-family: Poppins !important;
     font-size: 14px;
     font-weight: 400;
     width:148px !important;
     height:72px !important;
-    margin: -2px !important;
+    margin: -1px !important;
     border-top-right-radius: 0px !important;
     border-bottom-right-radius: 0px !important;
-
+    
     border-top-left-radius: 15px !important;
     border-bottom-left-radius: 15px !important;
-    border: 1px solid #FFA700;
-  
+    border: 1px solid rgba(255, 167, 0, 0.3);
 }
+
+
 
 .btn-artist:hover,
 .btn-artist:active{
@@ -43,20 +44,20 @@
 }
 
 .btn-listener{
-    background-color: #C4C4C4 !important;
+    background-color: rgba(196, 196, 196, 0.3) !important;
     color: black;
     font-family: Poppins !important;
     font-size: 14px;
     font-weight: 400;
     width:148px !important;
     height:72px !important;
-    margin: -2px !important;
+    margin: -1px !important;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
 
     border-top-right-radius: 15px !important;
     border-bottom-right-radius: 15px !important;
-    border: 1px solid #FFA700;
+    border: 1px solid rgba(255, 167, 0, 0.3);
 }
 
 .btn-listener:hover,
@@ -87,14 +88,17 @@
     text-align: center !important;
     font-size: 14px !important;
     border-radius: 10px !important;
-    margin-left: auto;
-    margin-left: 76.5px !important ;
+    margin: 0px 0px 0px 140px !important ;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 500px){
    .btn-Signup{
     margin-left: 0px !important ;
    } 
+   .btn-Login{
+       width: auto !important;
+      
+   }
 }
 
 
