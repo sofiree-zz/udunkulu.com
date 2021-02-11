@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import './Upload.css';
+import './UploadingPage.css';
+import {NavLink} from 'react-router-dom';
 import {AlbumImage} from '../../../Assets/Images';
 import {Button} from '../../../Components';
 
@@ -18,7 +20,9 @@ const Upload =()=>{
 
   }
     return(
-        <form class="form-padding">
+        <>
+        
+        <form class="form" id="formPadding">
             <div class="row p-1 d-flex justify-content-space-evenly">
                 <div class="col " id="col1">
                     <div class="form-group form-group-upload" id="albumFormGroup">
@@ -71,7 +75,7 @@ const Upload =()=>{
                 </div> 
             </div>
             
-            <div class="DropBox">
+            <div class="DropBox" id="dropBox">
                 
                 <p>Click to add files from your device</p>
                 <input
@@ -88,7 +92,18 @@ const Upload =()=>{
                 
             </div>
         </form>
+    
 
+        <div id="buttonDiv">
+            <NavLink to="/dashboard" className="nav-link">
+                <Button variant="back" size={"sm"}>Back</Button>
+            </NavLink>
+           
+            <NavLink to="/upload" className="nav-link">
+                <Button variant="next" size={"sm"}>Next</Button>
+            </NavLink>
+        </div>
+        </>
     );
 }
 
