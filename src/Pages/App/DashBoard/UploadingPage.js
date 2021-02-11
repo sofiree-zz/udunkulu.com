@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import '../DashBoard/Upload.css';
 import './UploadingPage.css';
+import {NavLink} from 'react-router-dom';
 import {Button} from '../../../Components';
 
 const UploadingPage=(props)=>{
@@ -46,8 +47,12 @@ const UploadingPage=(props)=>{
             </section>
 
             <div id="buttonDiv">
-                <Button variant="back" size={"sm"}>Back</Button>
-                <Button variant="next" size={"sm"}>Next</Button>
+                <NavLink to="/upload-your-music" className="nav-link">
+                    <Button variant="back" size={"sm"}>Back</Button>
+                </NavLink>
+                <NavLink to="/preview-song-upload" className="nav-link">
+                    <Button variant="next" size={"sm"}>Next</Button>
+                </NavLink>
             </div>
         </>
     );

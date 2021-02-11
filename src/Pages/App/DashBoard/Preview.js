@@ -1,6 +1,7 @@
 import './Preview.css';
 import './Upload.css';
 import './UploadingPage.css';
+import {NavLink} from 'react-router-dom';
 import {AlbumImage} from '../../../Assets/Images';
 import {Button} from '../../../Components';
 
@@ -26,8 +27,13 @@ const Preview =()=>{
             </div>
 
             <div id="buttonDiv">
-                <Button variant="back" size={"sm"}>Back</Button>
-                <Button variant="next" size={"sm"}>Finish</Button>
+                <NavLink to="/upload" className="nav-link">
+                  <Button variant="back" size={"sm"}>Back</Button>
+                </NavLink>
+                
+                <NavLink to="/finish" className="nav-link">
+                    <Button variant="next" size={"sm"}>Finish</Button>
+                </NavLink>
             </div>
         </>
     );

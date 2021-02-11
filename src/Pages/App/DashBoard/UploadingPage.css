@@ -76,9 +76,10 @@
     background-color: #FFA700 !important;
 }
 
-#buttonDiv {
+#buttonDiv{
     display: flex;
     justify-content: flex-end;
-    margin-top: 100px;
+    margin-top: 100px ;
     border-radius: 30px;
+   
 }
