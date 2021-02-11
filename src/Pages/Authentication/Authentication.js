@@ -56,8 +56,12 @@ const Authentication = (props) => {
         console.log("Signup response:", response);
       } catch (error) {
         setError(error.response.data.message);
-        console.log(error);
-      } finally {
+        const timer = setTimeout(() => {
+          setError(false);
+        }, 5000);
+        return()=>clearTimeout(timer);
+        // console.log(error);
+      }  finally {
         setIsLoading(false);
       }
     } else {
@@ -84,8 +88,11 @@ const Authentication = (props) => {
         console.log("Signup response:", response);
       } catch (error) {
         setError(error.response.data.message);
-        console.log("", error);
-        console.log(error);
+        const timer = setTimeout(() => {
+          setError(false);
+        }, 5000);
+        return()=>clearTimeout(timer);
+        // console.log(error);
       } finally {
         setIsLoading(false);
       }
@@ -97,7 +104,7 @@ const Authentication = (props) => {
     }
   };
 
-  // function for artist login
+  // function for user login
   const handleLogin = async (e, role) => {
     e.preventDefault();
     console.log("you are signed in");
@@ -109,13 +116,17 @@ const Authentication = (props) => {
           console.log(response.data.data);
           localStorage.setItem("token", response.data.data.token);
         }
-        alert("you are awesome");
+        alert("You have Successfully Logged In");
         window.location = "/dashboard";
         console.log("Login response:", response);
       } catch (error) {
         setError(error.response.data.message);
         console.log(error.response.data.message);
-        console.log(error);
+        const timer = setTimeout(() => {
+          setError(false);
+        }, 5000);
+        return()=>clearTimeout(timer);
+        // console.log(error);
       } finally {
         setIsLoading(false);
       }
@@ -124,14 +135,19 @@ const Authentication = (props) => {
         setIsLoading(true);
         const response = await sendDetailsToServer(state.email, state.password);
         if (response.data.data) {
-          localStorage.setItem("token", JSON.stringify(response.data.data.token));
+          localStorage.setItem("token",response.data.data.token);
         }
+        alert("You have Successfully Logged In");
         window.location = "/top-artists";
         console.log("Login response:", response);
       } catch (error) {
         setError(error.response.data.message);
         console.log(error.response.data.message);
-        console.log(error);
+        const timer = setTimeout(() => {
+          setError(false);
+        }, 5000);
+        return()=>clearTimeout(timer);
+        // console.log(error);
       } finally {
         setIsLoading(false);
       }
