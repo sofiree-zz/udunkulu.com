@@ -68,7 +68,13 @@ const Authentication = (props) => {
       setState((prevState) => ({
         ...prevState,
         passwordError: true,
-      }));
+      })); const timer = setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          passwordError: false,
+        }));
+      }, 5000);
+      return()=>clearTimeout(timer);
     }
     if (state.password === state.confirmPassword && role === "listener") {
       try {
@@ -100,7 +106,14 @@ const Authentication = (props) => {
       setState((prevState) => ({
         ...prevState,
         passwordError: true,
-      }));
+      })); const timer = setTimeout(() => {
+        setState((prevState) => ({
+          ...prevState,
+          passwordError: false,
+        }));
+      }, 5000);
+      return()=>clearTimeout(timer);
+
     }
   };
 
