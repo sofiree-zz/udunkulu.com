@@ -40,6 +40,7 @@ const Authentication = (props) => {
     console.log(state);
       if (state.password === state.confirmPassword && role ==="artist") {
         try {
+          setIsLoading(true);
           const response = await registerDetailsToServer(
             state.email,
             state.lastName,
@@ -49,24 +50,26 @@ const Authentication = (props) => {
             role
           );
             if (response.data.data) {
-              localStorage.setItem("state", JSON.stringify(response.data.token));
+              localStorage.setItem("token", JSON.stringify(response.data.token));
             }
-            // window.location = "/dashboard";
+             window.location = "/dashboard";
             console.log("Signup response:", response); 
         } catch (error) {
               setError(error.response.data.message)
-              console.log("SIGNUP", error);
                 console.log(error);
-              }
+              } finally {
+                setIsLoading(false);
+            }
        } 
        else{
         setState((prevState) =>({
           ...prevState,
           passwordError: true
         }));
-      }
+      } 
        if (state.password === state.confirmPassword && role==="listener"){
         try {
+          setIsLoading(true);
           const response = await registerDetailsToServer(
             state.email,
             state.lastName,
@@ -76,7 +79,7 @@ const Authentication = (props) => {
             role
           );
           if (response.data.data) {
-            localStorage.setItem("state", JSON.stringify(response.data.token));
+            localStorage.setItem("token", JSON.stringify(response.data.token));
           }
           window.location = "/top-artist";
           console.log("Signup response:", response); 
@@ -84,7 +87,9 @@ const Authentication = (props) => {
         setError(error.response.data.message)
         console.log("", error);
           console.log(error);
-            }
+            } finally {
+              setIsLoading(false);
+          }
           }  else{
             setState((prevState) =>({
               ...prevState,
@@ -102,24 +107,28 @@ const Authentication = (props) => {
     console.log("you are signed in");
     if (role === "artist"){
       try {
+        setIsLoading(true)
         const response = await sendDetailsToServer(state.email, state.password);
         if (response.data.data) {
           console.log(response.data.data)
-          localStorage.setItem("state", JSON.stringify(response.data.token));
+          localStorage.setItem("token", JSON.stringify(response.data.token));
         }
         alert("you are awesome")
-        // window.location = "/dashboard";
+        window.location = "/dashboard";
         console.log("Login response:", response); 
       } catch (error) {
         setError(error.response.data.message)
                 console.log(error.response.data.message);
                 console.log(error);
-      }
+      } finally {
+        setIsLoading(false);
+    }
     } else if(role ==="listener"){
       try {
+        setIsLoading(true)
         const response = await sendDetailsToServer(state.email, state.password);
         if (response.data.data) {
-          localStorage.setItem("state", JSON.stringify(response.data.token));
+          localStorage.setItem("token", JSON.stringify(response.data.token));
         }
         window.location = "/top-artists";
         console.log("Login response:", response); 
@@ -127,6 +136,8 @@ const Authentication = (props) => {
         setError(error.response.data.message)
         console.log(error.response.data.message);
         console.log(error);
+      } finally{
+        setIsLoading(false)
       }
     }
     
@@ -232,9 +243,9 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
-                {error && <p className="login__form--error">{error}</p>}
+                {error && <p className="loginFormError">{error}</p>}
                 <Button variant="Login" size={"lg"} >
-                  SIGN IN
+                {isLoading ? "Please wait..." : "SIGN IN"}
                 </Button>
               </form>
               {/* forgot password field */}
@@ -343,6 +354,7 @@ const Authentication = (props) => {
                         required 
                         title="6 characters minimum"
                       />
+                        {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col1 ends */}
                   </div>
@@ -387,15 +399,15 @@ const Authentication = (props) => {
                         required
                       />
                        
-                      {state.passwordError ? <p>Passwords do not match</p> : <p></p>}
+                      {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col2 ends */}
                   </div>
                   {/* row end */}
                 </div>
-                {error && <p className="login__form--error">{error}</p>}
+                {error && <p className="signUpFormError">{error}</p>}
                 <Button variant="Signup" size={"lg"} type="submit">
-                  SIGN UP
+                     {isLoading ? "Please wait..." : "SIGN UP"}
                 </Button>
               </form>
             
@@ -476,8 +488,9 @@ const Authentication = (props) => {
                     required
                   />
                 </div>
+                {error && <p className="loginFormError">{error}</p>}
                 <Button variant="Login" size={"lg"} >
-                  SIGN IN
+                {isLoading ? "Please wait..." : "SIGN IN"}
                 </Button>
               </form>
               {/* forgot password field */}
@@ -590,6 +603,8 @@ const Authentication = (props) => {
                         onChange={handleChange}
                         required
                       />
+
+                      {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col1 ends */}
                   </div>
@@ -633,13 +648,15 @@ const Authentication = (props) => {
                         onChange={handleChange}
                         required
                       />
+                        {state.passwordError ? <p className="formPasswordError">Passwords do not match!!!</p> : <p></p>}
                     </div>
                     {/* col2 ends */}
                   </div>
                   {/* row end */}
                 </div>
+                {error && <p className="signUpFormError">{error}</p>}
                 <Button variant="Signup" size={"lg"}>
-                  SIGN UP
+                {isLoading ? "Please wait..." : "SIGN UP"}
                 </Button>
               </form>
 
