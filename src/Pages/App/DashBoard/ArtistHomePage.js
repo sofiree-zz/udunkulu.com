@@ -1,15 +1,12 @@
 import './ArtistHomePage.css';
 
-const ArtistHomePage =()=>{
+const ArtistHomePage =(props)=>{
     return(
         <div>
             <h1 class="header-text-dashboard">
-                Welcome, James!
+                Welcome, (props.StageName)!
             </h1>
            
-
-          
-   
             <div class="row pb-5 innerPadding">
                 <div class="col-sm-4">
                     <div class="card high card-dashboard">Revenue</div>
