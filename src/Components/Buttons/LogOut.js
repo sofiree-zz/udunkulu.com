@@ -12,7 +12,7 @@ const LogOutButton=()=>{
         setLoggedOut(true)
     };
     if (loggedOut){
-        return <Redirect to="/dashboard" push={true} />
+        return <Redirect to="/" push={true} />
     }
     return(
         <>
