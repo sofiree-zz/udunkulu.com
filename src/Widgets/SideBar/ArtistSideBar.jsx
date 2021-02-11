@@ -1,18 +1,12 @@
-// import {useHistory} from "react-router-dom";
-
-import {useState} from "react";
 import { ProfilePhoto, UdunkuluLogo } from '../../Assets/Images';
 import { Home,LogOut,Upload } from '../../Assets/Icons';
 import './SideBar.css';
 import { NavLink } from "react-router-dom";
+import { LogOutButton } from '../../Components/Buttons/LogOut';
 
 
 
 const ArtistSidebar=()=>{
-
-  
-
-
     return(
         <section>
          <div class="sidebar" id="sidebar-wrapper">
@@ -29,24 +23,15 @@ const ArtistSidebar=()=>{
                 <NavLink to="/upload-your-music" className="nav-link">
                     <button type="button" class="btn btn-dark" id="button-border"><img src={Upload} alt=""/></button> 
                         Upload
-                    </NavLink>
+                </NavLink>
                 </li>
 
             </ul>
             <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
-            <li class="list-item">
-                    <a class="nav-link" href="#">
-                       
-                    </a>
-                </li>
                 <li class="list-item">
                     {/* TODO replace Udunku logo with dynamic artist img and avatar */}
                     <img src={ProfilePhoto} alt="" className=" btn profilePhoto"/>
-                    <a class="nav-link" href="#">
-                    <img src={LogOut} alt="" className="btn logOutBtn" id="butto-border"/>
-                        <span>Logout</span>
-                         
-                    </a>
+                    <LogOutButton/>
                 </li>
             </ul>
             

@@ -2,22 +2,16 @@
 
 import {useState} from "react";
 import { NavLink } from "react-router-dom";
-import { UdunkuluLogo } from '../../Assets/Images';
-import {Home} from '../../Assets/Icons';
+import { UdunkuluLogo, ProfilePhoto } from '../../Assets/Images';
+import {Home, SearchIcon} from '../../Assets/Icons';
 import { ArtistHomePage, Search } from "../../Pages";
 import './SideBar.css';
+import { LogOutButton } from "../../Components/Buttons/LogOut";
 
 
 
-const Sidebar=()=>{
-
-    // const [showSearch, setShowSearch] = useState(false);
-    // let searchBtn 
-    // if(showSearch) {
-    //     searchBtn =  <Search/>
-    // }
-
-
+const Sidebar=(props)=>{
+   
     return(
         <section>
          <div class="sidebar" id="sidebar-wrapper">
@@ -35,11 +29,22 @@ const Sidebar=()=>{
                 <li class="list-item">
                     {/* TODO clean up active state */}
                     <NavLink to='/search' className="nav-link">
-                    <button type="button" class="btn btn-dark" id="button-border"><i class="fas fa-search"></i></button>
+                    <button type="button" class="btn btn-dark" id="button-border"><img src={SearchIcon} alt=""/></button>
                     </NavLink>
                 </li>
             </ul>
             
+           
+                <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
+            <li class="list-item">
+                    {/* TODO replace Udunku logo with dynamic artist img and avatar */}
+                    
+                    <LogOutButton/>
+                </li>
+            </ul>
+            
+            
+
         </div>
     
         </section>
