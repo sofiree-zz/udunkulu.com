@@ -2,8 +2,13 @@ import React from "react";
 import "./Result.css";
 import { Artist1, Artist2 } from "../../../Assets/Artist";
 import { Trend1 } from "../../../Assets/Trending";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { loadNewSongs } from "../../../store/searchSlice";
+import SongCard from "../../../Components/SongCard/SongCard";
 
-export function SearchResult({ albums, artists, songs }) {
+const SearchResult = ({ albums, artists, songs, loadNewSongs }) => {
   return (
     <div className="top-align">
       {/* Fixed menu bar */}
@@ -64,24 +69,13 @@ export function SearchResult({ albums, artists, songs }) {
             {songs &&
               songs.length > 0 &&
               songs.map((song) => (
-                <div className="item">
-                  <div class="card shadow-sm border-0 rounded genCard">
-                    <div class="card-body p-0">
-                      <img
-                        src={Trend1}
-                        alt=""
-                        class="w-100 card-img-top cardImage"
-                      />
-                      <div class="songInnerText">
-                        <span class="songName">{song.title.slice(0, 10)}</span>
-                        <span class="text-muted songCountDetails">
-                          Davido:
-                          {song.noOfPlays ? song.noOfPlays : 2000 / 1000}K plays
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <SongCard
+                  loadNewSongs={loadNewSongs}
+                  song={song}
+                  songs={songs}
+                  key={song._id}
+                  image={Trend1}
+                />
               ))}
           </div>
         </div>
@@ -97,7 +91,7 @@ export function SearchResult({ albums, artists, songs }) {
               {artists &&
                 artists.length > 0 &&
                 artists.map((artist) => (
-                  <div className="item">
+                  <Link to="/now-playing" className="item">
                     <div class="card shadow-sm border-0 rounded genCard">
                       <div class="card-body p-0">
                         <img
@@ -110,7 +104,7 @@ export function SearchResult({ albums, artists, songs }) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
             </div>
           </div>
@@ -127,7 +121,7 @@ export function SearchResult({ albums, artists, songs }) {
               {albums &&
                 albums.length > 0 &&
                 albums.map((album) => (
-                  <div className="item">
+                  <Link to="/now-playing" className="item">
                     <div class="card shadow-sm border-0 rounded genCard">
                       <div class="card-body p-0">
                         <img
@@ -143,7 +137,7 @@ export function SearchResult({ albums, artists, songs }) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
             </div>
           </div>
@@ -151,4 +145,14 @@ export function SearchResult({ albums, artists, songs }) {
       </div>
     </div>
   );
-}
+};
+SearchResult.propTypes = {
+  loadNewSongs: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  songList: state.app.searchResults.nowPlayingList,
+});
+export default connect(mapStateToProps, {
+  loadNewSongs,
+})(SearchResult);

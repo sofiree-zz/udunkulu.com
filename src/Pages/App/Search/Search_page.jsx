@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
 import { UdunkuluVector } from "../../../Assets/Images";
 import { loadsearchResults } from "../../../store/searchSlice";
-import { SearchResult } from "./SearchResult";
+// import { SearchResult } from "./SearchResult";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import SearchResult from "./SearchResult";
 
 const Search_page = (props) => {
-  const [good, setGood] = useState(true);
-  // useEffect(() => {
-  //   props.loadsearchResults("uzzy");
-  // }, [good]);
   console.log(props);
   return (
     <div>
-      {props.searchResults && props.searchResults.artists&&props.searchResults.artists&&props.searchResults.artists ? (
+      {props.searchResults &&
+      props.searchResults.artists &&
+      props.searchResults.artists &&
+      props.searchResults.artists ? (
         <SearchResult
           artists={props.searchResults.artists}
           songs={props.searchResults.songs}

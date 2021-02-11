@@ -18,7 +18,7 @@ const api = ({ dispatch }) => (next) => async (action) => {
   if (onStart) dispatch({ type: onStart });
   try {
     const response = await axios.request({
-      baseURL: "https://udunkulu-api.herokuapp.com/api/v1",
+      baseURL: "http://localhost:3003/api/v1/",
       url,
       method,
       data,

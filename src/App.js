@@ -6,17 +6,38 @@ import {
   useHistory,
 } from "react-router-dom";
 import { App_layout, ArtistLayout } from "./Layout";
+<<<<<<< HEAD
 import { ArtistHomePage, Finish, LandingPage, Preview,  Upload, UploadingPage } from "./Pages";
 import { Trending,Mood_Genre,RecentlyAdded,TopArtist } from "./Pages/App/Recommendation";
 import { SearchResult } from "./Pages/App/Search/SearchResult";
+=======
+import {
+  ArtistHomePage,
+  Finish,
+  LandingPage,
+  NowPlaying,
+  Preview,
+  Upload,
+  UploadingPage,
+} from "./Pages";
+import {
+  Mood_Genre,
+  RecentlyAdded,
+  TopArtist,
+} from "./Pages/App/Recommendation";
+>>>>>>> eb77ea8... Features: Music player and Search feature
 import Search_page from "./Pages/App/Search/Search_page";
 import { ArtistNavBar, NavBar, Sidebar, ProgressBar } from "./Widgets";
-import { Provider } from 'react-redux'; 
-import store from './store/app/store';
+import { Provider } from "react-redux";
+import store from "./store/app/store";
+import FinePlayer from "./Pages/App/FinePlayer/FinePlayer";
+import SearchResult from "./Pages/App/Search/SearchResult";
+import Trending from "./Pages/App/Recommendation/Trending";
 
 const App = () => {
-  return <Provider store={store}>
-    <Router>
+  return (
+    <Provider store={store}>
+      <Router>
         <Switch>
           <Route exact path="/">
             <LandingPage />
@@ -67,7 +88,10 @@ const App = () => {
             path="/dashboard"
             component={ArtistHomePage}
             layout={ArtistLayout}
+<<<<<<< HEAD
             protectedRoute={true}
+=======
+>>>>>>> eb77ea8... Features: Music player and Search feature
           />
           <RouteWrapper
             path="/finish"
@@ -81,7 +105,11 @@ const App = () => {
           />
           <RouteWrapper
             path="/upload-your-music"
+<<<<<<< HEAD
             component={UploadForm}
+=======
+            component={Upload}
+>>>>>>> eb77ea8... Features: Music player and Search feature
             layout={ArtistLayout}
           />
           <RouteWrapper
@@ -89,16 +117,26 @@ const App = () => {
             component={UploadingPage}
             layout={ArtistLayout}
           />
+<<<<<<< HEAD
            <RouteWrapper 
            path="/multi" 
            component={UploadForm} 
            layout={ArtistLayout}
             />
+=======
+          <RouteWrapper
+            path="/now-playing"
+            component={FinePlayer}
+            layout={App_layout}
+          />
+>>>>>>> eb77ea8... Features: Music player and Search feature
         </Switch>
       </Router>
-  </Provider>;
+    </Provider>
+  );
 };
 
+<<<<<<< HEAD
 function RouteWrapper({
   protectedRoute = false,
   component: Component,
@@ -117,6 +155,9 @@ function RouteWrapper({
     }
   }, [Component, protectedRoute]);
 
+=======
+function RouteWrapper({ component: Component, layout: Layout, ...rest }) {
+>>>>>>> eb77ea8... Features: Music player and Search feature
   return (
     <Route
       {...rest}
