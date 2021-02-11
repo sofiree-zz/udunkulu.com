@@ -11,7 +11,7 @@ import { LogOutButton } from "../../Components/Buttons/LogOut";
 
 
 const Sidebar=(props)=>{
-   
+    const isLoggedIn = localStorage.getItem("token");
     return(
         <section>
          <div class="sidebar" id="sidebar-wrapper">
@@ -35,11 +35,9 @@ const Sidebar=(props)=>{
             </ul>
             
            
-                <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
-            <li class="list-item">
-                    {/* TODO replace Udunku logo with dynamic artist img and avatar */}
-                    
-                    <LogOutButton/>
+            <ul class="list-group flex-column d-inline-block list-group-sidebar pad-top">
+                <li class="list-item">
+                    {isLoggedIn ? <LogOutButton /> : null}
                 </li>
             </ul>
             

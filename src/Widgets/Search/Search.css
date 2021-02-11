@@ -7,44 +7,6 @@
     background-color: #0d0d00;
    }
 
-/* .search-form{
-    margin-left: 64px;
-} */
-
-#nav-bar{
-    background: #0d0d00;
-}
-
-.input-group{
-    background-color:#0d0d00;
-  
-}
-
-.form-control{
-    background-color: #0d0d00;
-    border-radius: 50px 50px;
-    
-}
-
-
-
-
-#search{
-    height: 50px;
-    
-    border-radius: 100px;
-    border:1px solid #c4c4c4; 
-    opacity: 20%;
-   
-}
-
-#input{
-    background-color: #0d0d00 !important;
-    border-radius: 50px 50px !important;
-    color: #c4c4c4 !important;
-}
-
-
 .search-container{
     margin: auto;
     margin-top: auto;
@@ -63,55 +25,55 @@ margin-top: 34px;
     opacity: 20%;
 }
 
-
-#button-addon3{
+/* #button-addon3{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-}
+} */
 
 /* artist */
-/* #search-bar{
-    width:calc(100% - 135.5px);
-    left: 135.5px;
-} */
+
 /* TODO pad search icon */
 #searchArtist{
     height: 50px;
     margin-top: 34px;
-    border-radius: 100px;
-    border:1px solid #fffdfd80;
-    background-color: #1B1A1F !important;
-    opacity: 0.3;
+    border-radius: 50px 50px;
+    border:1px solid rgba(255, 253, 253, 0.2);
+    background-color: rgba(27, 26, 31, 0.3) !important;
 }
 
 
 
-@media only screen and (min-width: 600px) {
-    #button{
-        margin-right: 81px;
-    }
+@media only screen and (max-width: 600px) {
+    
 }   
 
 #button-addon4{
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-radius: 25px 0px 0px 25px;
+    border: none;
+    margin: 0px;
+    background-color: rgba(27, 26, 31, 0.3) !important;
 }
+
 
 #button-addon4 i{
     font-size: 22px;
-margin-top: 5px;
-margin-right: -8px;
+    margin-top: 5px;
+    margin-right: -8px;
+    
 }
 .fa.fa-search{
     color: #828282;
   
 }
 #artistInput{
-    /* border-radius:50px 50px !important; */
-    background-color: #1B1A1F !important;
-    color: #ffffff;
-    
+    border-radius: 0px 25px 25px 0px !important;
+    background-color: rgba(27, 26, 31, 0.3) !important;
+    color: #ffffff; 
 }
-#searchForm{
-    width: 54%
+
+#artistInput:focus{
+    box-shadow: none;
+    outline: none !important;
 }
+
+
