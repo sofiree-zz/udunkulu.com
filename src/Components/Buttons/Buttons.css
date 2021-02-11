@@ -6,6 +6,7 @@
 }
 
 
+
 .btn-sign-in {
     background-color: #FFA700 !important;
     color: black;
@@ -15,7 +16,13 @@
     margin-left: 7rem !important ;
 }
 
-
+.btn-Sign-in {
+    background-color: #FFA700 !important;
+    color: black;
+    font-family: Poppins !important;
+    width:108px !important;
+    height:40px !important; 
+}
 
 
 /* buttons on authentication page */

@@ -21,7 +21,7 @@ export   function Search() {
                 
             </div>
         </form>  
-        <Button variant="sign-in" size={"sm"} data-target={"#authModal"} data-toggle="modal" style={{marginRight: '1.1em'}}>Sign In</Button>
+        <Button variant="Sign-in" size={"sm"} data-target={"#authModal"} data-toggle="modal" style={{marginRight: '1.1em'}}>Sign In</Button>
       </nav>
         </div>
     )
