@@ -1,0 +1,125 @@
+.container{
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+#playerWrap{
+    display: flex;
+    flex-direction: column;
+    width: 701px;
+    margin-left:43px;
+    
+}
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+#songTracks{
+    margin-top: 109px;
+}
+
+.playLibrary{
+    display: flex;
+    
+}
+
+#playerList{
+    line-height: 50px;    
+}
+
+#listItems{
+    border-bottom: 0.5px solid rgba(239, 240, 241, 0.2);  
+}
+
+span{
+    padding-right: 90px;
+}
+
+#playerImage{
+    margin-top: -5.2rem;
+    
+    background-color: blueviolet; 
+}
+
+#playerImageText{
+    display: flex;
+    flex-direction: column;
+    margin: 86px 145px 311px 52px;
+    line-height: 10px;
+    height: 248px;
+    width: 218px;
+}
+
+#heading1{
+    font-family: Poppins;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 600;
+    text-align: left;
+    color: white;
+    margin-top: -170px;
+}
+
+#heading2{
+    color: white;
+   
+    font-family: Poppins;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+#heading3{
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
+letter-spacing: 0em;
+text-align: left;
+} 
+
+#playerImageText text{
+    line-height: 35px;
+}
+
+#playerImageButton{
+    display: flex;
+}
+
+#followButton{
+    height: 26px;
+    width: 61px;
+    border-radius: 5px;
+    border: 0.5px solid #FFFFFF;
+    background: none;
+    color: white;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+}
+
+#playButton{
+    background: none;
+    border: none;
+}
+
+.fa-play{
+    color: white;
+    height: 13.5px;
+    width: 9px;
+    margin-left: 22px;
+}
