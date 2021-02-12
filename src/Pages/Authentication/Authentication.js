@@ -1,4 +1,5 @@
 import "./Authentication.css";
+import {useHistory} from 'react-router-dom';
 import { useState } from "react";
 import { UdunkuluModalLogo } from "../../Assets/Images";
 import { Button } from "../../Components";
@@ -10,6 +11,7 @@ import { LogOutButton } from "../../Components/Buttons/LogOut";
 import { Times } from "../../Assets/Icons";
 
 const Authentication = (props) => {
+  const history = useHistory();
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -58,7 +60,7 @@ const Authentication = (props) => {
         setError(error.response.data.message);
         const timer = setTimeout(() => {
           setError(false);
-        }, 5000);
+        }, 3000);
         return()=>clearTimeout(timer);
         // console.log(error);
       }  finally {
@@ -68,13 +70,7 @@ const Authentication = (props) => {
       setState((prevState) => ({
         ...prevState,
         passwordError: true,
-      })); const timer = setTimeout(() => {
-        setState((prevState) => ({
-          ...prevState,
-          passwordError: false,
-        }));
-      }, 5000);
-      return()=>clearTimeout(timer);
+       })); 
     }
     if (state.password === state.confirmPassword && role === "listener") {
       try {
@@ -96,9 +92,9 @@ const Authentication = (props) => {
         setError(error.response.data.message);
         const timer = setTimeout(() => {
           setError(false);
-        }, 5000);
+        }, 3000);
         return()=>clearTimeout(timer);
-        // console.log(error);
+        //  console.log(error);
       } finally {
         setIsLoading(false);
       }
@@ -106,14 +102,8 @@ const Authentication = (props) => {
       setState((prevState) => ({
         ...prevState,
         passwordError: true,
-      })); const timer = setTimeout(() => {
-        setState((prevState) => ({
-          ...prevState,
-          passwordError: false,
-        }));
-      }, 5000);
-      return()=>clearTimeout(timer);
-
+       })); 
+     
     }
   };
 
@@ -137,7 +127,7 @@ const Authentication = (props) => {
         console.log(error.response.data.message);
         const timer = setTimeout(() => {
           setError(false);
-        }, 5000);
+        }, 3000);
         return()=>clearTimeout(timer);
         // console.log(error);
       } finally {
@@ -158,7 +148,7 @@ const Authentication = (props) => {
         console.log(error.response.data.message);
         const timer = setTimeout(() => {
           setError(false);
-        }, 5000);
+        }, 3000);
         return()=>clearTimeout(timer);
         // console.log(error);
       } finally {
@@ -702,7 +692,7 @@ const Authentication = (props) => {
                           placeholder="Phone Number"
                           id="phoneNumber"
                           name="phoneNumber"
-                          pattern="[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{4}"
+                          // pattern="[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{4}"
                           value={state.phoneNumber}
                           onChange={handleChange}
                           required

@@ -5,6 +5,7 @@ import { Authentication } from "../../Pages";
 import { Search } from "../Search/Search";
 
 const NavBar = (props) => {
+  const isLoggedIn =localStorage.getItem("token");
   const url = window.location.pathname.substring(1);
   const navBar = (
     <>
@@ -43,15 +44,16 @@ const NavBar = (props) => {
               </NavLink>
             </li>
           </ul>
-
-          <Button
-            variant="sign-in"
-            size={"sm"}
-            data-target={"#authModal"}
-            data-toggle="modal"
-          >
-            Sign In
-          </Button>
+          {isLoggedIn ? null :
+            <Button
+              variant="sign-in"
+              size={"sm"}
+              data-target={"#authModal"}
+              data-toggle="modal"
+            >
+              Sign In
+            </Button>
+          }
         </div>
       </nav>
     </>
