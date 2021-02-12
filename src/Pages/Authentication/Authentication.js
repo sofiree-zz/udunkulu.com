@@ -51,6 +51,8 @@ const Authentication = (props) => {
         );
         if (response.data.data) {
           localStorage.setItem("token", response.data.data.token);
+           //set user id in storage to be use in th upload
+           localStorage.setItem("userId", response.data.data.artist._id);
         }
         window.location = "/dashboard";
         console.log("Signup response:", response);
@@ -115,6 +117,9 @@ const Authentication = (props) => {
         if (response.data.data) {
           console.log(response.data.data);
           localStorage.setItem("token", response.data.data.token);
+          //set user id to be use in th upload
+          localStorage.setItem("artistId", response.data.data.artist._id);
+          localStorage.setItem("userId", response.data.data.user._id);
         }
         alert("You have Successfully Logged In");
         window.location = "/dashboard";
@@ -806,3 +811,4 @@ const Authentication = (props) => {
   );
 };
 export { Authentication };
+

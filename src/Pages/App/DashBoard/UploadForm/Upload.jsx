@@ -4,7 +4,6 @@ import { Preview } from '../Preview'
 import { Upload } from '../Upload'
 import { UploadingPage } from '../UploadingPage'
 import Stepper from "react-stepper-horizontal";
-import { createAlbum } from "../../../../Api";
 import axios from "axios";
 
 export function UploadForm() {
@@ -13,11 +12,9 @@ export function UploadForm() {
     title: '',
     description: '',
     song: null,
-    albumId: null,
-    artistId: 1,
-    mood: '',
-    genre: '',
-    release: '',
+    mood: 'workout',
+    genre: 'pop',
+    released: '',
     feature: '',
     uploadStatus: ''
   })
@@ -32,35 +29,50 @@ export function UploadForm() {
   const handleSubmit = async (e) => {
     // this code sends 
     e.preventDefault();
-    console.log(formInfo.albumCover)
     const form = new FormData()
-    // form.append('title',formInfo.title);
-    // form.append('artistId',formInfo.artistId);
-    form.append('coverArt',formInfo.albumCover);
+    form.append('title',formInfo.title);
+    form.append('released',formInfo.released);
+    form.append('albumCoverArt',formInfo.albumCover);
     var token = localStorage.getItem('token');
+    var artistId = localStorage.getItem('artistId')
     const config = {
       headers: { 
           token: token,
           headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        onUploadProgress: function(progressEvent) {
+          var percentCompleted = Math.round( (progressEvent.loaded * 100) / progressEvent.total );
+          console.log(percentCompleted)
+        }
       }
       }
   };
-    
-    axios.post('https://udunkulu-api.herokuapp.com/api/v1/artists/artistId/albums',form,config).then(console.log("hello")).catch(console.log("nooo"))
-    // try {
-    //   const response = await createAlbum(
-    //     form
-    //   );
-    //   if (response.data.header) {
-    //     console.log(response)
-        
-    //   }
-    // } catch (error) {
-      
-    // }
-    // console.log(value);
+    // create an album
+    axios.post(`https://udunkulu-api.herokuapp.com/api/v1/artists/${artistId}/albums`,form,config)
+    .then((response) => {
+        next()
+      console.log(response);
+      var albumId, musicFormData;
+     // saved album id for music uploading function
+      albumId = response.data.data._id
+            // upload the  music
+            musicFormData = new FormData();
+            musicFormData.append('mood', formInfo.mood)
+            musicFormData.append('genre', formInfo.genre)
+            musicFormData.append('_song', formInfo.song)
+            axios.post(`https://udunkulu-api.herokuapp.com/api/v1/artists/${artistId}/albums/${albumId}/songs`,musicFormData,config).then((response) => {
+                console.log(response)
+                var progess = document.getElementById('progress');
+                progess.innerHTML = response.data;
+                next()
+            },(error) => {
+              console.log(error);
+            });
+    }, (error) => {
+      console.log(error);
+    });
   };
+
   const next = () =>setCurrentPage((prev) => prev + 1);
   const prev = () => setCurrentPage((prev) => prev - 1);
 
@@ -90,7 +102,7 @@ export function UploadForm() {
     });
   }
   return (
-    <div>
+    <div className="top-align">
       <form onSubmit={handleSubmit} encType="multipart/form-data">
       <Stepper
         steps={sections}
@@ -108,12 +120,11 @@ export function UploadForm() {
         circleFontColor = '#a7a7a700'
         disabledSteps={ [4] }
         size= {25}
-
        />
+
         {currentPage === 0 && (
           <>
             <Upload handleAlbumCoverSelect={handleAlbumCoverSelect} handleSongUpload={handleSongUpload} handleFieldOnChange={handleFieldOnChange} formInfo={formInfo} />
-            <button onClick={next}>Next</button>
           </>
         )}
         {currentPage === 1 && (
@@ -124,7 +135,7 @@ export function UploadForm() {
         {currentPage === 2 && (
           <>
           {console.log(formInfo)}
-          <UploadingPage  next={next} prev={prev} />
+          <UploadingPage  next={next} prev={prev} formInfo={formInfo}   />
           
           </>
         )}

@@ -12,11 +12,11 @@ const UploadingPage=(props)=>{
         <>
            {/* delected add more files section : its not needed for version 1 */}
 
-            <section id="uploadStatus">
-                <div class="TrackInfo">Track Number + Track Name</div>
+            <section id="uploadStatus" className="spacer">
+                <div class="TrackInfo">{props.formInfo.song.name}</div>
                 <div class="TrackStatus d-flex" >
-                  <div id="size"><text>Uploading...</text> + File.Size</div>
-                  <i class="fas fa-trash"></i>
+                  <div id="size"><text>Uploading...</text> + {(props.formInfo.song.size/1024/1024).toFixed(1)}Mb</div>
+                  {/* <i class="fas fa-trash"></i> */}
                 </div>
 
             <div class="progress">
@@ -27,6 +27,7 @@ const UploadingPage=(props)=>{
                     aria-valuemin="0"
                     aria-valuemax="100"
                     style={{width: progress + "%"}}
+                    id= "progress"
                 >
                     {progress}%
                 </div>

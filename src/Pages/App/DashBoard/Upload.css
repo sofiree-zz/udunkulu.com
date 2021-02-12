@@ -168,4 +168,6 @@
     text-align: center !important;
     padding: 0.5rem;
 }
-
+.spacer{
+    margin-top: 5em !important;
+}
