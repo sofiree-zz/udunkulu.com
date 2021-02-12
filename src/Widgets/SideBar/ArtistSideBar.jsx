@@ -10,7 +10,7 @@ const ArtistSidebar = () => {
   return (
       <section>
         <div class="sidebar" id="sidebar-wrapper">
-          <NavLink to="/" className="nav-link">
+          <NavLink to="/dashboard" className="nav-link">
             <img
               class="sidebar-header"
               src={UdunkuluLogo}
