@@ -94,7 +94,7 @@ const App = () => {
           />
           <RouteWrapper
             path="/upload-your-music"
-            component={Upload}
+            component={UploadForm}
             layout={ArtistLayout}
           />
           <RouteWrapper
